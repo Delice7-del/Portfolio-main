@@ -1,30 +1,30 @@
 import { motion } from 'framer-motion';
-import { Briefcase, GraduationCap, Award } from 'lucide-react';
+import { LuBriefcase, LuGraduationCap, LuAward } from 'react-icons/lu';
 
 const TimelineSection = () => {
-   const experiences = [
-    {
-        year: "2023 — Present",
-        title: "Lead Frontend & Mobile Developer",
-        company: "Independent Consultant",
-        description: "Designed and developed responsive web and mobile apps with React, React Native, and Flutter. Created reusable UI component libraries and optimized app performance, reducing load times by 40%. Implemented interactive UI/UX designs improving user engagement and retention across 10+ projects.",
-        icon: Briefcase
-    },
-    {
-        year: "2022 — 2023",
-        title: "Open Source Contributor",
-        company: "Tech Ecosystem",
-        description: "Built high-performance frontend libraries and mobile utilities adopted by 10k+ developers. Contributed UI/UX enhancements to multiple open-source projects, including custom React components and mobile UI templates. Mentored junior developers on best practices for responsive design and mobile-first development.",
-        icon: Award
-    },
-    {
-        year: "2021 — 2022",
-        title: "UI/UX & Frontend Designer",
-        company: "NextGen Solutions",
-        description: "Redesigned web and mobile interfaces improving Core Web Vitals and accessibility scores. Developed interactive prototypes and animations using Figma, Adobe XD, and Framer Motion. Collaborated with developers to implement pixel-perfect UIs, reducing user-reported issues by 35%.",
-        icon: Briefcase
-    }
-];
+    const experiences = [
+        {
+            year: "2023 — Present",
+            title: "Lead Frontend & Mobile Developer",
+            company: "Independent Consultant",
+            description: "Designed and developed responsive web and mobile apps with React, React Native, and Flutter. Created reusable UI component libraries and optimized app performance, reducing load times by 40%. Implemented interactive UI/UX designs improving user engagement and retention across 10+ projects.",
+            icon: LuBriefcase
+        },
+        {
+            year: "2022 — 2023",
+            title: "Open Source Contributor",
+            company: "Tech Ecosystem",
+            description: "Built high-performance frontend libraries and mobile utilities adopted by 10k+ developers. Contributed UI/UX enhancements to multiple open-source projects, including custom React components and mobile UI templates. Mentored junior developers on best practices for responsive design and mobile-first development.",
+            icon: LuAward
+        },
+        {
+            year: "2021 — 2022",
+            title: "UI/UX & Frontend Designer",
+            company: "NextGen Solutions",
+            description: "Redesigned web and mobile interfaces improving Core Web Vitals and accessibility scores. Developed interactive prototypes and animations using Figma, Adobe XD, and Framer Motion. Collaborated with developers to implement pixel-perfect UIs, reducing user-reported issues by 35%.",
+            icon: LuBriefcase
+        }
+    ];
 
 
 

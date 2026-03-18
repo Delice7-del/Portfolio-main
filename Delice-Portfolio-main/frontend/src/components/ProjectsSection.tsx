@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Code2, Brain, Shield, Palette } from 'lucide-react';
+import { LuExternalLink, LuGithub, LuCode, LuBrain, LuShield, LuPalette } from 'react-icons/lu';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
@@ -20,11 +20,11 @@ const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const categories = [
-    { id: 'all', label: 'All Projects', icon: Code2 },
-    { id: 'frontend', label: 'Frontend', icon: Code2 },
-    { id: 'mobile', label: 'Mobile App', icon: Code2 },
-    { id: 'ai', label: 'AI/ML', icon: Brain },
-    { id: 'security', label: 'Security', icon: Shield }
+    { id: 'all', label: 'All Projects', icon: LuCode },
+    { id: 'frontend', label: 'Frontend', icon: LuCode },
+    { id: 'mobile', label: 'Mobile App', icon: LuCode },
+    { id: 'ai', label: 'AI/ML', icon: LuBrain },
+    { id: 'security', label: 'Security', icon: LuShield }
   ];
 
   const allProjects: Project[] = [
@@ -33,9 +33,9 @@ const ProjectsSection = () => {
       title: "HealthConnect",
       description: "A modular healthcare system designed to manage patients, professionals, and sensitive data with advanced access control.",
       technologies: ["React", "Express", "MongoDB", "Socket.io"],
-      category: "fullstack",
+      category: "security",
       demoUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Delice7-del/HealthConnect",
       image: "🏥",
       featured: true
     },
@@ -46,65 +46,35 @@ const ProjectsSection = () => {
       technologies: ["Flutter", "Python", "TensorFlow", "FastAPI"],
       category: "ai",
       demoUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Delice7-del/CamAI",
       image: "👁️",
       featured: true
     },
+   
     {
       id: 3,
-      title: "EduHub",
-      description: "Provides students with resources, courses, and collaboration tools to improve access to education.",
-      technologies: ["React", "Node.js", "MongoDB", "AWS S3"],
-      category: "fullstack",
-      demoUrl: "#",
-      githubUrl: "#",
-      image: "📚",
-      featured: false
-    },
-    {
-      id: 4,
       title: "EcoTrack",
       description: "Displays real-time sensor data (temperature, humidity, air quality) with alerts and historical insights.",
       technologies: ["React Native", "Node.js", "IoT", "Firebase"],
       category: "mobile",
       demoUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Delice7-del/EcoTrack",
       image: "🌱",
       featured: false
     },
     {
-      id: 5,
+      id: 4,
       title: "Sponsify",
       description: "Makes it easy to support education, healthcare, and daily needs for underprivileged children.",
       technologies: ["React", "Node.js", "Express", "MongoDB"],
-      category: "fullstack",
+      category: "frontend",
       demoUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Delice7-del/Sponsify",
       image: "🤝",
       featured: false
     },
-    {
-      id: 6,
-      title: "MindSpace",
-      description: "Helps users track emotions, access resources, and connect with professionals for improved well-being.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Firebase"],
-      category: "fullstack",
-      demoUrl: "#",
-      githubUrl: "#",
-      image: "🧠",
-      featured: false
-    },
-    {
-      id: 7,
-      title: "FoodShare",
-      description: "Reduces food waste by connecting individuals, restaurants, and organizations to share surplus meals.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Mapbox"],
-      category: "fullstack",
-      demoUrl: "#",
-      githubUrl: "#",
-      image: "🍲",
-      featured: false
-    }
+    
+    
   ];
 
   const projects = activeFilter === 'all'
@@ -203,7 +173,7 @@ const ProjectsSection = () => {
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-muted-foreground mb-3 group-hover:text-foreground transition-colors flex items-center justify-between">
                     {project.title}
-                    <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0 text-primary" />
+                    <LuExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0 text-primary" />
                   </h3>
 
                   <p className="text-gray-400 mb-6 leading-relaxed line-clamp-3 text-sm">
@@ -234,7 +204,7 @@ const ProjectsSection = () => {
                         asChild
                       >
                         <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="mr-2 h-4 w-4" />
+                          <LuExternalLink className="mr-2 h-4 w-4" />
                           Live Demo
                         </a>
                       </Button>
@@ -247,7 +217,7 @@ const ProjectsSection = () => {
                         asChild
                       >
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="mr-2 h-4 w-4" />
+                          <LuGithub className="mr-2 h-4 w-4" />
                           Source
                         </a>
                       </Button>
@@ -267,7 +237,7 @@ const ProjectsSection = () => {
           className="text-center mt-24"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-surface border border-white/10 text-muted-foreground font-mono text-sm">
-            <Github className="w-4 h-4" />
+            <LuGithub className="w-4 h-4" />
             <span>git checkout more-projects</span>
           </div>
           <div className="mt-6">

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Download } from 'lucide-react';
+import { LuMenu, LuX, LuDownload } from 'react-icons/lu';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -110,7 +110,7 @@ const Navigation = () => {
             {/* Desktop CTA */}
             <Button size="sm" className="tech-button rounded-none" asChild>
               <Link to="/resume">
-                <Download className="mr-2 h-4 w-4" />
+                <LuDownload className="mr-2 h-4 w-4" />
                 RESUME
               </Link>
             </Button>
@@ -123,7 +123,7 @@ const Navigation = () => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-foreground hover:text-primary transition-colors"
             >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMobileMenuOpen ? <LuX className="h-6 w-6" /> : <LuMenu className="h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -145,7 +145,7 @@ const Navigation = () => {
             <div className="pt-6">
               <Button size="sm" className="w-full tech-button rounded-none h-14" asChild>
                 <Link to="/resume" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Download className="mr-2 h-4 w-4" />
+                  <LuDownload className="mr-2 h-4 w-4" />
                   RESUME / CV
                 </Link>
               </Button>

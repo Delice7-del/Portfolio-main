@@ -1,156 +1,156 @@
 import { motion } from "framer-motion";
 import Navigation from "../components/Navigation";
 import FooterSection from "../components/FooterSection";
-import { ArrowLeft, BookOpen, Shield, Zap, TrendingUp, Cpu } from "lucide-react";
+import { LuArrowLeft, LuBookOpen, LuShield, LuZap, LuTrendingUp, LuCpu } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const CaseStudies = () => {
     const cases = [
-    {
-        title: "HealthConnect",
-        subtitle: "Revolutionizing Healthcare Data Management",
-        category: "Full-Stack Development",
-        description: "A modular healthcare system designed to manage patients, professionals, and medical records with advanced security.",
-        sections: [
-            {
-                title: "Architecture",
-                content: "Built with a micro-modular architecture using React and Node.js. Implemented RBAC (Role-Based Access Control) to ensure data privacy and compliance with healthcare standards.",
-                icon: Shield
-            },
-            {
-                title: "The Challenge",
-                content: "Legacy systems were fragmented and insecure. We needed a unified platform that could handle high-concurrency while maintaining zero-trust security principles.",
-                icon: Zap
-            },
-            {
-                title: "Impact",
-                content: "Reduced data retrieval time by 40% and improved professional coordination efficiency by 30%. Successfully handled 10k+ patient records in initial pilot.",
-                icon: TrendingUp
-            }
-        ]
-    },
+        {
+            title: "HealthConnect",
+            subtitle: "Revolutionizing Healthcare Data Management",
+            category: "Full-Stack Development",
+            description: "A modular healthcare system designed to manage patients, professionals, and medical records with advanced security.",
+            sections: [
+                {
+                    title: "Architecture",
+                    content: "Built with a micro-modular architecture using React and Node.js. Implemented RBAC (Role-Based Access Control) to ensure data privacy and compliance with healthcare standards.",
+                    icon: LuShield
+                },
+                {
+                    title: "The Challenge",
+                    content: "Legacy systems were fragmented and insecure. We needed a unified platform that could handle high-concurrency while maintaining zero-trust security principles.",
+                    icon: LuZap
+                },
+                {
+                    title: "Impact",
+                    content: "Reduced data retrieval time by 40% and improved professional coordination efficiency by 30%. Successfully handled 10k+ patient records in initial pilot.",
+                    icon: LuTrendingUp
+                }
+            ]
+        },
 
-    {
-        title: "CamAI",
-        subtitle: "Smart Surveillance on the Edge",
-        category: "AI & Mobile",
-        description: "Real-time surveillance system that uses computer vision to detect and alert users about critical events.",
-        sections: [
-            {
-                title: "Engineering",
-                content: "Integrated TensorFlow Lite for on-device inference, reducing latency and bandwidth usage. Used FastAPI for high-performance background processing.",
-                icon: Cpu
-            },
-            {
-                title: "Approach",
-                content: "Focused on an 'Offline-First' AI model to ensure reliability in areas with poor connectivity. Implemented intelligent frame sampling to optimize battery life.",
-                icon: Zap
-            },
-            {
-                title: "Impact",
-                content: "98% accuracy in motion and object detection. Enabled 24/7 monitoring with minimal server costs due to edge-based processing.",
-                icon: TrendingUp
-            }
-        ]
-    },
+        {
+            title: "CamAI",
+            subtitle: "Smart Surveillance on the Edge",
+            category: "AI & Mobile",
+            description: "Real-time surveillance system that uses computer vision to detect and alert users about critical events.",
+            sections: [
+                {
+                    title: "Engineering",
+                    content: "Integrated TensorFlow Lite for on-device inference, reducing latency and bandwidth usage. Used FastAPI for high-performance background processing.",
+                    icon: LuCpu
+                },
+                {
+                    title: "Approach",
+                    content: "Focused on an 'Offline-First' AI model to ensure reliability in areas with poor connectivity. Implemented intelligent frame sampling to optimize battery life.",
+                    icon: LuZap
+                },
+                {
+                    title: "Impact",
+                    content: "98% accuracy in motion and object detection. Enabled 24/7 monitoring with minimal server costs due to edge-based processing.",
+                    icon: LuTrendingUp
+                }
+            ]
+        },
 
-    {
-        title: "Food-Share",
-        subtitle: "Reducing Food Waste Through Community Sharing",
-        category: "Social Impact Platform",
-        description: "A community-driven platform that connects people with surplus food to those in need, minimizing waste and improving food accessibility.",
-        sections: [
-            {
-                title: "System Design",
-                content: "Built with React and Node.js, featuring real-time listings and location-based matching to connect donors with nearby recipients efficiently.",
-                icon: Shield
-            },
-            {
-                title: "The Challenge",
-                content: "Ensuring trust and safety while enabling fast food sharing. The platform needed moderation tools and expiry tracking for shared items.",
-                icon: Zap
-            },
-            {
-                title: "Impact",
-                content: "Helped redistribute hundreds of meals during testing phases and increased community participation in food-sharing initiatives.",
-                icon: TrendingUp
-            }
-        ]
-    },
+        {
+            title: "Food-Share",
+            subtitle: "Reducing Food Waste Through Community Sharing",
+            category: "Social Impact Platform",
+            description: "A community-driven platform that connects people with surplus food to those in need, minimizing waste and improving food accessibility.",
+            sections: [
+                {
+                    title: "System Design",
+                    content: "Built with React and Node.js, featuring real-time listings and location-based matching to connect donors with nearby recipients efficiently.",
+                    icon: LuShield
+                },
+                {
+                    title: "The Challenge",
+                    content: "Ensuring trust and safety while enabling fast food sharing. The platform needed moderation tools and expiry tracking for shared items.",
+                    icon: LuZap
+                },
+                {
+                    title: "Impact",
+                    content: "Helped redistribute hundreds of meals during testing phases and increased community participation in food-sharing initiatives.",
+                    icon: LuTrendingUp
+                }
+            ]
+        },
 
-    {
-        title: "EcoTrack",
-        subtitle: "Real-Time Environmental Monitoring",
-        category: "IoT & Data Visualization",
-        description: "A smart environmental monitoring system displaying real-time sensor data such as temperature, humidity, air quality, and soil moisture.",
-        sections: [
-            {
-                title: "Technology Stack",
-                content: "Integrated IoT sensors with a web dashboard built in React, providing real-time charts, alerts, and historical analytics.",
-                icon: Cpu
-            },
-            {
-                title: "The Challenge",
-                content: "Handling continuous sensor data streams while maintaining accuracy and low latency in resource-constrained environments.",
-                icon: Zap
-            },
-            {
-                title: "Impact",
-                content: "Enabled early environmental warnings and improved data-driven decision-making for agriculture and sustainability projects.",
-                icon: TrendingUp
-            }
-        ]
-    },
+        {
+            title: "EcoTrack",
+            subtitle: "Real-Time Environmental Monitoring",
+            category: "IoT & Data Visualization",
+            description: "A smart environmental monitoring system displaying real-time sensor data such as temperature, humidity, air quality, and soil moisture.",
+            sections: [
+                {
+                    title: "Technology Stack",
+                    content: "Integrated IoT sensors with a web dashboard built in React, providing real-time charts, alerts, and historical analytics.",
+                    icon: LuCpu
+                },
+                {
+                    title: "The Challenge",
+                    content: "Handling continuous sensor data streams while maintaining accuracy and low latency in resource-constrained environments.",
+                    icon: LuZap
+                },
+                {
+                    title: "Impact",
+                    content: "Enabled early environmental warnings and improved data-driven decision-making for agriculture and sustainability projects.",
+                    icon: LuTrendingUp
+                }
+            ]
+        },
 
-    {
-        title: "Sponsify",
-        subtitle: "Connecting Street Children with Sponsors",
-        category: "Social Welfare Platform",
-        description: "A web platform designed to link vulnerable children with sponsors, supporting education, healthcare, and daily needs transparently.",
-        sections: [
-            {
-                title: "Platform Architecture",
-                content: "Developed a secure full-stack system with user authentication, sponsorship tracking, and transparent reporting features.",
-                icon: Shield
-            },
-            {
-                title: "The Challenge",
-                content: "Building trust between sponsors and beneficiaries while ensuring data privacy and accountability.",
-                icon: Zap
-            },
-            {
-                title: "Impact",
-                content: "Improved sponsor engagement and provided a transparent way to support children’s long-term development.",
-                icon: TrendingUp
-            }
-        ]
-    },
+        {
+            title: "Sponsify",
+            subtitle: "Connecting Street Children with Sponsors",
+            category: "Social Welfare Platform",
+            description: "A web platform designed to link vulnerable children with sponsors, supporting education, healthcare, and daily needs transparently.",
+            sections: [
+                {
+                    title: "Platform Architecture",
+                    content: "Developed a secure full-stack system with user authentication, sponsorship tracking, and transparent reporting features.",
+                    icon: LuShield
+                },
+                {
+                    title: "The Challenge",
+                    content: "Building trust between sponsors and beneficiaries while ensuring data privacy and accountability.",
+                    icon: LuZap
+                },
+                {
+                    title: "Impact",
+                    content: "Improved sponsor engagement and provided a transparent way to support children’s long-term development.",
+                    icon: LuTrendingUp
+                }
+            ]
+        },
 
-    {
-        title: "EduHub",
-        subtitle: "Simplifying Online Learning Access",
-        category: "EdTech Platform",
-        description: "An online learning platform that allows users to explore courses, learn from instructors, and read testimonials in one place.",
-        sections: [
-            {
-                title: "User Experience",
-                content: "Designed a clean and intuitive UI focused on course discovery, accessibility, and learner engagement.",
-                icon: Shield
-            },
-            {
-                title: "The Challenge",
-                content: "Creating a scalable platform that remains simple for learners while supporting diverse educational content.",
-                icon: Zap
-            },
-            {
-                title: "Impact",
-                content: "Made course discovery easier and increased learner enrollment during early adoption phases.",
-                icon: TrendingUp
-            }
-        ]
-    }
-];
+        {
+            title: "EduHub",
+            subtitle: "Simplifying Online Learning Access",
+            category: "EdTech Platform",
+            description: "An online learning platform that allows users to explore courses, learn from instructors, and read testimonials in one place.",
+            sections: [
+                {
+                    title: "User Experience",
+                    content: "Designed a clean and intuitive UI focused on course discovery, accessibility, and learner engagement.",
+                    icon: LuShield
+                },
+                {
+                    title: "The Challenge",
+                    content: "Creating a scalable platform that remains simple for learners while supporting diverse educational content.",
+                    icon: LuZap
+                },
+                {
+                    title: "Impact",
+                    content: "Made course discovery easier and increased learner enrollment during early adoption phases.",
+                    icon: LuTrendingUp
+                }
+            ]
+        }
+    ];
 
 
     return (
@@ -159,7 +159,7 @@ const CaseStudies = () => {
 
             <div className="pt-32 pb-20 container mx-auto px-6">
                 <Link to="/" className="inline-flex items-center text-primary hover:gap-2 transition-all group mb-8">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    <LuArrowLeft className="w-4 h-4 mr-2" />
                     Back to Home
                 </Link>
 

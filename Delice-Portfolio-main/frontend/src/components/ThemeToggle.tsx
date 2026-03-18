@@ -1,4 +1,4 @@
-import { Moon, Sun } from "lucide-react";
+import { LuMoon, LuSun } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/ThemeProvider";
 import { motion, AnimatePresence } from "framer-motion";
@@ -22,9 +22,9 @@ export function ThemeToggle() {
                     transition={{ duration: 0.2 }}
                 >
                     {theme === "dark" ? (
-                        <Moon className="h-5 w-5 text-primary" />
+                        <LuMoon className="h-5 w-5 text-primary" />
                     ) : (
-                        <Sun className="h-5 w-5 text-yellow-500" />
+                        <LuSun className="h-5 w-5 text-yellow-500" />
                     )}
                 </motion.div>
             </AnimatePresence>

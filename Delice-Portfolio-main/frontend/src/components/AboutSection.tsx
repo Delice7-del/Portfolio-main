@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Brain, Shield, Code, Palette, Zap, Target } from 'lucide-react';
+import { LuBrain, LuShield, LuCode, LuPalette, LuZap, LuTarget } from 'react-icons/lu';
 
 interface Highlight {
   id: number;
@@ -15,10 +15,10 @@ interface Skill {
 }
 
 const iconMap = {
-  Shield: Shield,
-  Code: Code,
-  Brain: Brain,
-  Palette: Palette
+  Shield: LuShield,
+  Code: LuCode,
+  Brain: LuBrain,
+  Palette: LuPalette
 };
 
 const AboutSection = () => {
@@ -46,14 +46,19 @@ const AboutSection = () => {
       title: "Learning",
       description: "Exploring UI/UX psychology, design systems, and emerging technologies to grow as a developer.",
       icon: "Zap"
-    } as any // Use Zap for Learning
+    } as any // Use LuZap for Learning
   ];
 
   const skills: Skill[] = [
     { id: 1, name: "React", category: "primary" },
     { id: 2, name: "TypeScript", category: "primary" },
     { id: 3, name: "Tailwind CSS", category: "secondary" },
-    { id: 4, name: "UI/UX", category: "accent" }
+    { id: 4, name: "UI/UX", category: "accent" },
+    { id: 5, name: "Java", category: "primary" },
+    { id: 6, name: "Python", category: "secondary" },
+    { id: 7, name: "Flutter", category: "accent" },
+    
+    
   ];
 
   return (
@@ -78,7 +83,7 @@ const AboutSection = () => {
               </p>
               <div className="flex items-center space-x-4 pt-4">
                 <div className="flex items-center space-x-2">
-                  <Target className="h-5 w-5 text-primary" />
+                  <LuTarget className="h-5 w-5 text-primary" />
                   <span className="text-sm font-medium">Core Stack:</span>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -96,7 +101,7 @@ const AboutSection = () => {
 
             <div className="grid grid-cols-2 gap-4">
               {highlights.map((item) => {
-                const Icon = (iconMap as any)[item.icon] || Zap;
+                const Icon = (iconMap as any)[item.icon] || LuZap;
                 return (
                   <div
                     key={item.id}

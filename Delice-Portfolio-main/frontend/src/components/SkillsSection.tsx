@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Code, Database, Shield, Palette, Brain, Terminal } from 'lucide-react';
+import { LuCode, LuDatabase, LuShield, LuPalette, LuBrain, LuTerminal } from 'react-icons/lu';
 
 interface Skill {
   name: string;
@@ -23,52 +23,52 @@ interface Learning {
 }
 
 const iconMap = {
-  Code: Code,
-  Database: Database,
-  Shield: Shield,
-  Palette: Palette,
-  Brain: Brain,
-  Terminal: Terminal
+  Code: LuCode,
+  Database: LuDatabase,
+  Shield: LuShield,
+  Palette: LuPalette,
+  Brain: LuBrain,
+  Terminal: LuTerminal
 };
 
 const SkillsSection = () => {
   const skillCategories: SkillCategory[] = [
-  {
-  id: 1,
-  title: "Frontend & UI/UX Mastery",
-  icon: "Code",
-  color: "primary",
-  skills: [
-    { name: "React / Next.js", level: 95 },
-    { name: "Tailwind CSS", level: 98 },
-    { name: "Framer Motion / Animations", level: 85 },
-    { name: "UI/UX Design (Figma, Adobe XD)", level: 90 }
-  ]
-},
-{
-  id: 2,
-  title: "Mobile Development",
-  icon: "Code",
-  color: "accent",
-  skills: [
-    { name: "React Native", level: 85 },
-    { name: "Flutter (Basics)", level: 75 },
-    { name: "Responsive Design", level: 95 },
-    { name: "Interactive Prototypes", level: 90 }
-  ]
-},
-   {
-  id: 3,
-  title: "Backend Development",
-  icon: "Terminal",
-  color: "secondary",
-  skills: [
-    { name: "Node.js / Express", level: 85 },
-    { name: "MongoDB", level: 80 },
-    { name: "RESTful APIs", level: 75 }
-  ]
-},
-    
+    {
+      id: 1,
+      title: "Frontend & UI/UX Mastery",
+      icon: "Code",
+      color: "primary",
+      skills: [
+        { name: "React / Next.js", level: 95 },
+        { name: "Tailwind CSS", level: 98 },
+        { name: "Framer Motion / Animations", level: 85 },
+        { name: "UI/UX Design (Figma, Adobe XD)", level: 90 }
+      ]
+    },
+    {
+      id: 2,
+      title: "Mobile Development",
+      icon: "Code",
+      color: "accent",
+      skills: [
+        { name: "React Native", level: 85 },
+        { name: "Flutter (Basics)", level: 75 },
+        { name: "Responsive Design", level: 95 },
+        { name: "Interactive Prototypes", level: 90 }
+      ]
+    },
+    {
+      id: 3,
+      title: "Backend Development",
+      icon: "Terminal",
+      color: "secondary",
+      skills: [
+        { name: "Node.js / Express", level: 85 },
+        { name: "MongoDB", level: 80 },
+        { name: "RESTful APIs", level: 75 }
+      ]
+    },
+
   ];
 
   const getColorClass = (color: string, type: 'bg' | 'text' | 'border') => {
@@ -86,7 +86,7 @@ const SkillsSection = () => {
         <div className="text-center mb-16">
           <h2 className="section-heading gradient-text">Technical Depth</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-   I create interactive, high-quality frontend and mobile applications with a strong focus on UI/UX design, responsiveness, and user-friendly experiences.
+            I create interactive, high-quality frontend and mobile applications with a strong focus on UI/UX design, responsiveness, and user-friendly experiences.
           </p>
           <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full mt-6"></div>
         </div>
@@ -141,7 +141,7 @@ const SkillsSection = () => {
           <div className="max-w-4xl mx-auto floating-card p-8">
             <h3 className="text-2xl font-bold gradient-text mb-6">Beyond the Buzzwords</h3>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-           I go beyond tools, mastering design principles and frontend workflows. My focus is on delivering responsive, user-friendly, and visually appealing apps.</p>
+              I go beyond tools, mastering design principles and frontend workflows. My focus is on delivering responsive, user-friendly, and visually appealing apps.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
               {[
                 { label: "Reliability", value: "99.9%" },

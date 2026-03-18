@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { LuArrowDown, LuGithub, LuLinkedin, LuTwitter, LuMail, LuCode, LuPalette } from 'react-icons/lu';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 
@@ -29,9 +29,9 @@ const TypewriterText = ({ text, delay = 0 }: { text: string; delay?: number }) =
 
 const HeroSection = () => {
   const socialLinks = [
-    { icon: Github, href: "https://github.com/Delice7-del" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/delice-keza-b41382333/" },
-    { icon: Mail, href: "mailto:delicekeza0@gmail.com" }
+    { icon: LuGithub, href: "https://github.com/Delice7-del" },
+    { icon: LuLinkedin, href: "https://www.linkedin.com/in/delice-keza-b41382333/" },
+    { icon: LuMail, href: "mailto:delicekeza0@gmail.com" }
   ];
 
   return (
@@ -50,13 +50,13 @@ const HeroSection = () => {
             className="lg:w-1/2 space-y-8"
           >
             <div className="flex items-center space-x-3 text-primary font-mono mb-4">
-              <span>root@keza:~# ./start_ui_ux.sh</span>
+              <span className="text-sm tracking-[0.2em] uppercase">// Design & Engineering Excellence</span>
             </div>
 
             <h1 className="text-6xl md:text-7xl font-bold tracking-tight text-foreground leading-tight">
-              Crafting Engaging <br />
-              <span className="text-primary-600">
-                <TypewriterText text="Frontend & Mobile Experiences" delay={500} />
+              Designing the <br />
+              <span className="text-primary">
+                <TypewriterText text="Future of Digital Mobility" delay={500} />
               </span>
             </h1>
 
@@ -89,57 +89,60 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Right Content: Hacker Terminal Visual */}
+          {/* Right Content: Premium Visual Stack */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:w-1/2 w-full"
+            className="lg:w-1/2 w-full relative"
           >
-            <div className="bg-[#0c0c0c] border border-white/10 rounded-lg overflow-hidden shadow-2xl shadow-black/50 max-w-lg mx-auto">
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-[#151515]">
-                <div className="w-3 h-3 rounded-full bg-red-500" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                <div className="w-3 h-3 rounded-full bg-green-500" />
-                <span className="ml-2 text-xs text-muted-foreground font-mono">bash — 80x24</span>
-              </div>
-              <div className="p-6 font-mono text-sm space-y-4 h-[300px] overflow-hidden text-gray-300">
-                <div className="flex">
-                  <span className="text-green-500 mr-2">➜</span>
-                  <span className="text-blue-500 mr-2">~</span>
-                  <span>whoami</span>
-                </div>
-                <div className="text-white/80 pl-4">
-                  KEZA Delice<br />
-                  &gt; UI/UX Designer<br />
-                  &gt; Frontend Engineer<br />
-                  &gt; Mobile App Developer
-                </div>
+            <div className="relative aspect-square max-w-lg mx-auto">
+              {/* Background Shapes */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 rounded-full blur-3xl" />
 
-                <div className="flex">
-                  <span className="text-green-500 mr-2">➜</span>
-                  <span className="text-blue-500 mr-2">~</span>
-                  <span>ls skills/</span>
+              {/* Floating UI Elements */}
+              <motion.div
+                animate={{ y: [0, -20, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-[10%] left-[5%] w-[60%] aspect-video bg-surface border border-white/10 rounded-lg shadow-2xl p-4 overflow-hidden"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                  <div className="h-1 w-20 bg-white/10 rounded" />
                 </div>
-                <div className="grid grid-cols-2 gap-x-4 gap-y-1 pl-4 text-blue-400">
-                  <span>react.js</span>
-                  <span>node.js</span>
-                  <span>typescript</span>
-                  <span>system_design</span>
-                  <span>security</span>
-                  <span>performance</span>
+                <div className="space-y-2">
+                  <div className="h-2 w-full bg-white/5 rounded" />
+                  <div className="h-2 w-[80%] bg-white/5 rounded" />
+                  <div className="h-2 w-[90%] bg-white/5 rounded" />
                 </div>
+                <div className="absolute bottom-4 right-4 text-primary opacity-20"><LuCode size={40} /></div>
+              </motion.div>
 
-                <div className="flex">
-                  <span className="text-green-500 mr-2">➜</span>
-                  <span className="text-blue-500 mr-2">~</span>
-                  <motion.span
-                    animate={{ opacity: [1, 0] }}
-                    transition={{ repeat: Infinity, duration: 0.8 }}
-                    className="w-2.5 h-5 bg-white block"
-                  />
+              <motion.div
+                animate={{ y: [0, 20, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="absolute bottom-[10%] right-[5%] w-[55%] aspect-square bg-surface-elevated border border-white/10 rounded-2xl shadow-2xl p-6 flex flex-col items-center justify-center text-center"
+              >
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                  <LuPalette className="text-primary w-8 h-8" />
                 </div>
-              </div>
+                <div className="h-2 w-24 bg-primary/20 rounded mb-2" />
+                <div className="h-1 w-16 bg-white/10 rounded" />
+              </motion.div>
+
+              <motion.div
+                animate={{ x: [0, 15, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute top-[40%] right-0 w-[40%] aspect-[3/4] bg-background border border-primary/20 rounded-xl shadow-xl p-4"
+              >
+                <div className="h-1 w-12 bg-primary/40 rounded mb-6" />
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="aspect-square bg-white/5 rounded" />
+                  <div className="aspect-square bg-white/5 rounded" />
+                  <div className="aspect-square bg-white/5 rounded" />
+                  <div className="aspect-square bg-white/5 rounded" />
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -151,7 +154,7 @@ const HeroSection = () => {
           transition={{ delay: 2, duration: 1.5, repeat: Infinity }}
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         >
-          <ArrowDown className="w-6 h-6 text-muted-foreground" />
+          <LuArrowDown className="w-6 h-6 text-muted-foreground" />
         </motion.div>
       </div>
     </section>

@@ -1,55 +1,55 @@
 import { motion } from "framer-motion";
 import Navigation from "../components/Navigation";
 import FooterSection from "../components/FooterSection";
-import { ArrowLeft, Award, ExternalLink, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { LuArrowLeft, LuAward, LuExternalLink, LuShieldCheck, LuCircleCheck } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Certifications = () => {
-   const certifications = [
-    {
-        id: 1,
-        title: "Advanced Frontend Architecture",
-        issuer: "Global Tech Learning",
-        date: "Dec 2024",
-        skills: [
-            "React Architecture",
-            "State Management",
-            "Performance Optimization",
-            "Scalable Frontend Design"
-        ],
-        credentialId: "GTL-FE-9823",
-        icon: ShieldCheck
-    },
-    {
-        id: 2,
-        title: "Mobile Development Professional",
-        issuer: "Engineering Institute",
-        date: "Aug 2024",
-        skills: [
-            "React Native",
-            "Android & iOS Development",
-            "API Integration",
-            "App Deployment"
-        ],
-        credentialId: "ENG-MOB-4421",
-        icon: Award
-    },
-    {
-        id: 3,
-        title: "UI/UX Design Specialist",
-        issuer: "Creative Design Academy",
-        date: "Jan 2025",
-        skills: [
-            "User Research",
-            "Wireframing & Prototyping",
-            "Figma",
-            "Usability Testing"
-        ],
-        credentialId: "CDA-UX-1102",
-        icon: CheckCircle2
-    }
-];
+    const certifications = [
+        {
+            id: 1,
+            title: "Advanced Frontend Architecture",
+            issuer: "Global Tech Learning",
+            date: "Dec 2024",
+            skills: [
+                "React Architecture",
+                "State Management",
+                "Performance Optimization",
+                "Scalable Frontend Design"
+            ],
+            credentialId: "GTL-FE-9823",
+            icon: LuShieldCheck
+        },
+        {
+            id: 2,
+            title: "Mobile Development Professional",
+            issuer: "Engineering Institute",
+            date: "Aug 2024",
+            skills: [
+                "React Native",
+                "Android & iOS Development",
+                "API Integration",
+                "App Deployment"
+            ],
+            credentialId: "ENG-MOB-4421",
+            icon: LuAward
+        },
+        {
+            id: 3,
+            title: "UI/UX Design Specialist",
+            issuer: "Creative Design Academy",
+            date: "Jan 2025",
+            skills: [
+                "User Research",
+                "Wireframing & Prototyping",
+                "Figma",
+                "Usability Testing"
+            ],
+            credentialId: "CDA-UX-1102",
+            icon: LuCircleCheck
+        }
+    ];
 
 
     return (
@@ -58,7 +58,7 @@ const Certifications = () => {
 
             <div className="pt-32 pb-20 container mx-auto px-6">
                 <Link to="/" className="inline-flex items-center text-primary hover:gap-2 transition-all group mb-8">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    <LuArrowLeft className="w-4 h-4 mr-2" />
                     Back to Home
                 </Link>
 
@@ -100,7 +100,7 @@ const Certifications = () => {
                                     <p className="text-sm font-bold">{cert.date}</p>
                                 </div>
                                 <Button variant="ghost" size="sm" className="text-primary h-10 hover:bg-primary/10 group">
-                                    Verify <ExternalLink className="ml-2 w-4 h-4 group-hover:scale-110 transition-transform" />
+                                    Verify <LuExternalLink className="ml-2 w-4 h-4 group-hover:scale-110 transition-transform" />
                                 </Button>
                             </div>
                         </motion.div>

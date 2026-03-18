@@ -1,4 +1,4 @@
-import { ArrowUp, Github, Linkedin, Twitter, Mail, ExternalLink, Terminal, Heart } from 'lucide-react';
+import { LuArrowUp, LuGithub, LuLinkedin, LuTwitter, LuMail, LuExternalLink, LuHeart } from 'react-icons/lu';
 import { Button } from '@/components/ui/button';
 
 const FooterSection = () => {
@@ -17,7 +17,6 @@ const FooterSection = () => {
         {/* Brand Column */}
         <div className="md:col-span-2 space-y-6">
           <div className="flex items-center space-x-2 text-2xl font-bold text-foreground tracking-tighter">
-            <Terminal className="text-primary w-8 h-8" />
             <span>KEZA</span>
           </div>
           <p className="text-muted-foreground max-w-sm leading-relaxed">
@@ -26,9 +25,9 @@ const FooterSection = () => {
           </p>
           <div className="flex space-x-4 pt-4">
             {[
-              { icon: Github, href: "https://github.com/Delice7-del" },
-              { icon: Linkedin, href: "https://www.linkedin.com/in/delice-keza-b41382333/" },
-              { icon: Mail, href: "mailto:delicekeza0@gmail.com" }
+              { icon: LuGithub, href: "https://github.com/Delice7-del" },
+              { icon: LuLinkedin, href: "https://www.linkedin.com/in/delice-keza-b41382333/" },
+              { icon: LuMail, href: "mailto:delicekeza0@gmail.com" }
             ].map((social, idx) => (
               <a
                 key={idx}
@@ -56,23 +55,22 @@ const FooterSection = () => {
           </ul>
         </div>
 
-        {/* Status & Tech */}
+        {/* Expertise & Focus */}
         <div>
-          <h4 className="text-lg font-bold text-foreground mb-6 font-mono">/SYSTEM_STATUS</h4>
+          <h4 className="text-lg font-bold text-foreground mb-6 font-mono">/EXPERTISE</h4>
           <div className="space-y-4">
-            <div className="flex items-center justify-between p-3 bg-background border border-white/5">
-              <span className="text-muted-foreground text-sm">Status</span>
-              <span className="flex items-center text-green-500 text-sm font-mono tracking-wider">
-                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2"></span>
-                ONLINE
-              </span>
-            </div>
-            <div className="flex items-center justify-between p-3 bg-background border border-white/5">
-              <span className="text-muted-foreground text-sm">Version</span>
-              <span className="text-white text-sm font-mono">v2.0.4 (Stable)</span>
-            </div>
-            <Button className="w-full tech-button rounded-none h-12 text-sm" onClick={scrollToTop}>
-              <ArrowUp className="w-4 h-4 mr-2" />
+            {[
+              { label: "Strategic UI/UX", desc: "User-centered products" },
+              { label: "Cross-Platform", desc: "Native performance" },
+              { label: "Robust Security", desc: "Enterprise standards" }
+            ].map((skill, idx) => (
+              <div key={idx} className="p-3 bg-secondary/5 border border-white/5 hover:border-primary/20 transition-colors">
+                <div className="text-white text-sm font-bold mb-1">{skill.label}</div>
+                <div className="text-muted-foreground text-xs">{skill.desc}</div>
+              </div>
+            ))}
+            <Button className="w-full tech-button rounded-none h-12 text-sm mt-4" onClick={scrollToTop}>
+              <LuArrowUp className="w-4 h-4 mr-2" />
               BACK TO TOP
             </Button>
           </div>

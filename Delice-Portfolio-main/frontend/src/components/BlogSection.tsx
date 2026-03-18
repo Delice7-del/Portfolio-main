@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, ArrowRight, BookOpen } from 'lucide-react';
+import { LuCalendar, LuArrowRight, LuBookOpen } from 'react-icons/lu';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
@@ -17,77 +17,77 @@ interface BlogPost {
 
 const BlogSection = () => {
   const blogPosts: BlogPost[] = [
-  {
-    id: 1,
-    title: "CamAI: The Future of Intelligent Surveillance",
-    excerpt: "CamAI explores how artificial intelligence is redefining modern surveillance systems with real-time insights.",
-    content: "CamAI explores how artificial intelligence is redefining modern surveillance systems. The focus is on building intelligent, privacy-aware solutions that deliver real-time insights while maintaining ethical responsibility.\n\nFeatured Topics:\n• AI-driven transformation of traditional surveillance\n• Real-time object detection on edge devices\n• Privacy-first security system design\n• Mobile integration for intelligent monitoring",
-    date: "2025-07-15",
-    readTime: "5 min read",
-    category: "AI & Security",
-    tags: ["AI", "Security", "Surveillance"]
-  },
-  {
-    id: 2,
-    title: "EcoTrack: IoT for a Greener Future",
-    excerpt: "EcoTrack highlights how IoT technologies can support sustainability and environmental awareness.",
-    content: "EcoTrack highlights how Internet of Things (IoT) technologies can support sustainability and environmental awareness through accessible, data-driven solutions.\n\nFeatured Topics:\n• Low-cost IoT sensor deployment\n• Real-time environmental data visualization\n• Smart farming and data-driven agriculture\n• Air quality monitoring and public health",
-    date: "2025-08-20",
-    readTime: "4 min read",
-    category: "IoT & Sustainability",
-    tags: ["IoT", "Sustainability", "SmartFarming"]
-  },
-  {
-    id: 3,
-    title: "MindSpace: Mental Health Support Platform",
-    excerpt: "MindSpace focuses on promoting mental well-being through supportive digital tools designed to help manage stress.",
-    content: "MindSpace focuses on promoting mental well-being through education, awareness, and supportive digital tools designed to help users manage stress and improve emotional balance.\n\nFeatured Topics:\n• Stress and anxiety management strategies\n• Personal mental health journeys\n• Mindfulness, journaling, and meditation guides",
-    date: "2024-12-10",
-    readTime: "6 min read",
-    category: "Mental Health",
-    tags: ["HealthTech", "Mindfulness", "Wellness"]
-  },
-  {
-    id: 4,
-    title: "Food-Share: Reducing Food Waste & Connecting Communities",
-    excerpt: "Food-Share connects people with extra food to those in need, tackling food waste and promoting sharing.",
-    content: "Food-Share is a platform designed to reduce food waste and help people access free or shared meals easily.\n\nFeatured Topics:\n• Connecting donors with communities in need\n• Real-time tracking of available food\n• Mobile-friendly interface for quick sharing\n• Promoting sustainability through community-driven initiatives",
-    date: "2025-09-01",
-    readTime: "5 min read",
-    category: "Social Impact",
-    tags: ["FoodTech", "Sustainability", "Community"]
-  },
-  {
-    id: 5,
-    title: "HealthConnect: Bridging Patients & Providers",
-    excerpt: "HealthConnect allows patients to access healthcare services, book appointments, and receive virtual support seamlessly.",
-    content: "HealthConnect is a platform that bridges patients and healthcare providers, allowing users to manage appointments, access health resources, and receive virtual support.\n\nFeatured Topics:\n• Easy appointment booking\n• Access to trusted health resources\n• Virtual consultations and telehealth support\n• Mobile-first design for accessibility",
-    date: "2025-09-05",
-    readTime: "6 min read",
-    category: "HealthTech",
-    tags: ["Healthcare", "UI/UX", "MobileApp"]
-  },
-  {
-    id: 6,
-    title: "Sponsify: Connecting Street Children with Sponsors",
-    excerpt: "Sponsify makes it easy to support education, healthcare, and daily needs for street children through an intuitive platform.",
-    content: "Sponsify is a web platform that connects street children with sponsors, helping them access education, healthcare, and essential support.\n\nFeatured Topics:\n• Transparent sponsor-to-child connection\n• Mobile-friendly tracking of donations\n• Interactive UI for easy navigation\n• Promoting social impact through technology",
-    date: "2025-09-07",
-    readTime: "5 min read",
-    category: "Social Impact",
-    tags: ["Community", "Education", "SocialTech"]
-  },
-  {
-    id: 7,
-    title: "EduHub: Online Learning Platform",
-    excerpt: "EduHub helps learners explore courses, access instructors, and enroll in educational content with ease.",
-    content: "EduHub is an online learning platform where users can explore featured courses, learn from instructors, and read testimonials — making learning accessible and engaging.\n\nFeatured Topics:\n• Course discovery and enrollment\n• Instructor-student interaction\n• Testimonials and progress tracking\n• Mobile-friendly learning experience",
-    date: "2025-09-10",
-    readTime: "5 min read",
-    category: "EdTech",
-    tags: ["Education", "Learning", "UI/UX"]
-  }
-];
+    {
+      id: 1,
+      title: "CamAI: The Future of Intelligent Surveillance",
+      excerpt: "CamAI explores how artificial intelligence is redefining modern surveillance systems with real-time insights.",
+      content: "CamAI explores how artificial intelligence is redefining modern surveillance systems. The focus is on building intelligent, privacy-aware solutions that deliver real-time insights while maintaining ethical responsibility.\n\nFeatured Topics:\n• AI-driven transformation of traditional surveillance\n• Real-time object detection on edge devices\n• Privacy-first security system design\n• Mobile integration for intelligent monitoring",
+      date: "2025-07-15",
+      readTime: "5 min read",
+      category: "AI & Security",
+      tags: ["AI", "Security", "Surveillance"]
+    },
+    {
+      id: 2,
+      title: "EcoTrack: IoT for a Greener Future",
+      excerpt: "EcoTrack highlights how IoT technologies can support sustainability and environmental awareness.",
+      content: "EcoTrack highlights how Internet of Things (IoT) technologies can support sustainability and environmental awareness through accessible, data-driven solutions.\n\nFeatured Topics:\n• Low-cost IoT sensor deployment\n• Real-time environmental data visualization\n• Smart farming and data-driven agriculture\n• Air quality monitoring and public health",
+      date: "2025-08-20",
+      readTime: "4 min read",
+      category: "IoT & Sustainability",
+      tags: ["IoT", "Sustainability", "SmartFarming"]
+    },
+    {
+      id: 3,
+      title: "MindSpace: Mental Health Support Platform",
+      excerpt: "MindSpace focuses on promoting mental well-being through supportive digital tools designed to help manage stress.",
+      content: "MindSpace focuses on promoting mental well-being through education, awareness, and supportive digital tools designed to help users manage stress and improve emotional balance.\n\nFeatured Topics:\n• Stress and anxiety management strategies\n• Personal mental health journeys\n• Mindfulness, journaling, and meditation guides",
+      date: "2024-12-10",
+      readTime: "6 min read",
+      category: "Mental Health",
+      tags: ["HealthTech", "Mindfulness", "Wellness"]
+    },
+    {
+      id: 4,
+      title: "Food-Share: Reducing Food Waste & Connecting Communities",
+      excerpt: "Food-Share connects people with extra food to those in need, tackling food waste and promoting sharing.",
+      content: "Food-Share is a platform designed to reduce food waste and help people access free or shared meals easily.\n\nFeatured Topics:\n• Connecting donors with communities in need\n• Real-time tracking of available food\n• Mobile-friendly interface for quick sharing\n• Promoting sustainability through community-driven initiatives",
+      date: "2025-09-01",
+      readTime: "5 min read",
+      category: "Social Impact",
+      tags: ["FoodTech", "Sustainability", "Community"]
+    },
+    {
+      id: 5,
+      title: "HealthConnect: Bridging Patients & Providers",
+      excerpt: "HealthConnect allows patients to access healthcare services, book appointments, and receive virtual support seamlessly.",
+      content: "HealthConnect is a platform that bridges patients and healthcare providers, allowing users to manage appointments, access health resources, and receive virtual support.\n\nFeatured Topics:\n• Easy appointment booking\n• Access to trusted health resources\n• Virtual consultations and telehealth support\n• Mobile-first design for accessibility",
+      date: "2025-09-05",
+      readTime: "6 min read",
+      category: "HealthTech",
+      tags: ["Healthcare", "UI/UX", "MobileApp"]
+    },
+    {
+      id: 6,
+      title: "Sponsify: Connecting Street Children with Sponsors",
+      excerpt: "Sponsify makes it easy to support education, healthcare, and daily needs for street children through an intuitive platform.",
+      content: "Sponsify is a web platform that connects street children with sponsors, helping them access education, healthcare, and essential support.\n\nFeatured Topics:\n• Transparent sponsor-to-child connection\n• Mobile-friendly tracking of donations\n• Interactive UI for easy navigation\n• Promoting social impact through technology",
+      date: "2025-09-07",
+      readTime: "5 min read",
+      category: "Social Impact",
+      tags: ["Community", "Education", "SocialTech"]
+    },
+    {
+      id: 7,
+      title: "EduHub: Online Learning Platform",
+      excerpt: "EduHub helps learners explore courses, access instructors, and enroll in educational content with ease.",
+      content: "EduHub is an online learning platform where users can explore featured courses, learn from instructors, and read testimonials — making learning accessible and engaging.\n\nFeatured Topics:\n• Course discovery and enrollment\n• Instructor-student interaction\n• Testimonials and progress tracking\n• Mobile-friendly learning experience",
+      date: "2025-09-10",
+      readTime: "5 min read",
+      category: "EdTech",
+      tags: ["Education", "Learning", "UI/UX"]
+    }
+  ];
 
 
   const formatDate = (dateString: string) => {
@@ -123,7 +123,7 @@ const BlogSection = () => {
                 <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
                   <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                     <div className="flex items-center space-x-1">
-                      <Calendar className="h-4 w-4" />
+                      <LuCalendar className="h-4 w-4" />
                       <span>{formatDate(post.date)}</span>
                     </div>
                     <span>•</span>
@@ -164,7 +164,7 @@ const BlogSection = () => {
                         className="text-primary hover:bg-primary hover:text-primary-foreground group-hover:translate-x-1 transition-all"
                       >
                         Read More
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                        <LuArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </DialogTrigger>
                     <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
@@ -172,7 +172,7 @@ const BlogSection = () => {
                         <h3 className="text-2xl font-bold">{post.title}</h3>
                         <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-4">
                           <div className="flex items-center space-x-1">
-                            <Calendar className="h-4 w-4" />
+                            <LuCalendar className="h-4 w-4" />
                             <span>{formatDate(post.date)}</span>
                           </div>
                           <span>•</span>
@@ -204,7 +204,7 @@ const BlogSection = () => {
           <div className="text-center mt-16">
             <div className="floating-card p-8">
               <div className="mb-6">
-                <BookOpen className="h-12 w-12 text-primary mx-auto mb-4" />
+                <LuBookOpen className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-foreground mb-2">Stay Updated</h3>
                 <p className="text-muted-foreground">
                   Follow my journey in tech, security, and AI development

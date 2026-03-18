@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram, Twitter } from 'lucide-react';
+import { LuMail, LuPhone, LuMapPin, LuSend, LuGithub, LuLinkedin, LuInstagram, LuTwitter } from 'react-icons/lu';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -56,13 +56,13 @@ const ContactSection = () => {
 
   const contactInfo = [
     {
-      icon: Mail,
+      icon: LuMail,
       label: "Email",
       value: "delicekeza0@gmail.com",
       href: "mailto:delicekeza0@gmail.com"
     },
     {
-      icon: MapPin,
+      icon: LuMapPin,
       label: "Location",
       value: "Kigali, Rwanda",
       href: "https://maps.google.com/?q=Kigali,Rwanda"
@@ -71,13 +71,13 @@ const ContactSection = () => {
 
   const socialLinks = [
     {
-      icon: Github,
+      icon: LuGithub,
       label: "GitHub",
       href: "https://github.com/Delice7-del",
       color: "hover:text-primary"
     },
     {
-      icon: Linkedin,
+      icon: LuLinkedin,
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/delice-keza-b41382333/",
       color: "hover:text-primary"
@@ -176,7 +176,7 @@ const ContactSection = () => {
                     "Sending..."
                   ) : (
                     <>
-                      <Send className="mr-2 h-4 w-4" />
+                      <LuSend className="mr-2 h-4 w-4" />
                       Send Message
                     </>
                   )}
