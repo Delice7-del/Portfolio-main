@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import Navigation from "../components/Navigation";
-import FooterSection from "../components/FooterSection";
 import { LuArrowLeft, LuBookOpen, LuShield, LuZap, LuTrendingUp, LuCpu } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import Navigation from "../components/Navigation";
+import FooterSection from "../components/FooterSection";
 
 const CaseStudies = () => {
     const cases = [
@@ -80,30 +80,6 @@ const CaseStudies = () => {
         },
 
         {
-            title: "EcoTrack",
-            subtitle: "Real-Time Environmental Monitoring",
-            category: "IoT & Data Visualization",
-            description: "A smart environmental monitoring system displaying real-time sensor data such as temperature, humidity, air quality, and soil moisture.",
-            sections: [
-                {
-                    title: "Technology Stack",
-                    content: "Integrated IoT sensors with a web dashboard built in React, providing real-time charts, alerts, and historical analytics.",
-                    icon: LuCpu
-                },
-                {
-                    title: "The Challenge",
-                    content: "Handling continuous sensor data streams while maintaining accuracy and low latency in resource-constrained environments.",
-                    icon: LuZap
-                },
-                {
-                    title: "Impact",
-                    content: "Enabled early environmental warnings and improved data-driven decision-making for agriculture and sustainability projects.",
-                    icon: LuTrendingUp
-                }
-            ]
-        },
-
-        {
             title: "Sponsify",
             subtitle: "Connecting Street Children with Sponsors",
             category: "Social Welfare Platform",
@@ -121,37 +97,36 @@ const CaseStudies = () => {
                 },
                 {
                     title: "Impact",
-                    content: "Improved sponsor engagement and provided a transparent way to support children’s long-term development.",
+                    content: "Improved sponsor engagement and provided a transparent way to support children's long-term development.",
                     icon: LuTrendingUp
                 }
             ]
         },
 
         {
-            title: "EduHub",
-            subtitle: "Simplifying Online Learning Access",
-            category: "EdTech Platform",
-            description: "An online learning platform that allows users to explore courses, learn from instructors, and read testimonials in one place.",
+            title: "EventiaPro",
+            subtitle: "Secure Event Management for Communities",
+            category: "Enterprise Java Platform",
+            description: "A Java-based secure event management system that enhances how users discover and interact with events while giving administrators full control over creation and participant management.",
             sections: [
                 {
-                    title: "User Experience",
-                    content: "Designed a clean and intuitive UI focused on course discovery, accessibility, and learner engagement.",
+                    title: "Architecture",
+                    content: "Built with Spring Boot and Spring Security, implementing JWT-based authentication, role-based access control, and Hibernate ORM over a MySQL database for robust data integrity.",
                     icon: LuShield
                 },
                 {
                     title: "The Challenge",
-                    content: "Creating a scalable platform that remains simple for learners while supporting diverse educational content.",
+                    content: "Designing a platform that simultaneously serves multiple user roles — attendees, organizers, and admins — each with distinct permissions and workflows, without compromising performance.",
                     icon: LuZap
                 },
                 {
                     title: "Impact",
-                    content: "Made course discovery easier and increased learner enrollment during early adoption phases.",
+                    content: "Delivered a fully auditable event lifecycle system with secure participant tracking, reducing manual coordination overhead and improving event discoverability for end users.",
                     icon: LuTrendingUp
                 }
             ]
         }
     ];
-
 
     return (
         <main className="min-h-screen bg-background">

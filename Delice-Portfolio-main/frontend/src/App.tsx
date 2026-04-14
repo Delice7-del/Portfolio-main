@@ -10,6 +10,7 @@ import CaseStudies from "./pages/CaseStudies";
 import Certifications from "./pages/Certifications";
 import OpenSource from "./pages/OpenSource";
 import Resume from "./pages/Resume";
+import Journal from "./pages/Journal";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
               <Route path="/certifications" element={<Certifications />} />
               <Route path="/open-source" element={<OpenSource />} />
               <Route path="/resume" element={<Resume />} />
+              <Route path="/journal" element={<Journal />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

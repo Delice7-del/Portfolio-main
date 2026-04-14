@@ -5,6 +5,7 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navigation = () => {
+  const [activeHash, setActiveHash] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -19,20 +20,54 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Scroll Spy Logic
+  useEffect(() => {
+    const sections = navLinks
+      .filter(link => link.isHash)
+      .map(link => link.href.replace('#', ''));
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveHash(`#${entry.target.id}`);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach(sectionId => {
+      const element = document.getElementById(sectionId);
+      if (element) observer.observe(element);
+    });
+
+    return () => {
+      sections.forEach(sectionId => {
+        const element = document.getElementById(sectionId);
+        if (element) observer.unobserve(element);
+      });
+    };
+  }, []);
+
   const navLinks = [
-    { href: '/', label: 'Home', isHash: false },
+    { href: '#home', label: 'Home', isHash: true },
     { href: '#about', label: 'About', isHash: true },
     { href: '#projects', label: 'Projects', isHash: true },
-    { href: '/case-studies', label: 'Case Studies', isHash: false },
-    { href: '/certifications', label: 'Certifications', isHash: false },
-    { href: '/open-source', label: 'Open Source', isHash: false },
-    { href: '#blog', label: 'Blog', isHash: true },
+    { href: '#testimonials', label: 'Testimonials', isHash: true },
+    { href: '#certifications', label: 'Certifications', isHash: true },
     { href: '#contact', label: 'Contact', isHash: true }
   ];
 
   const handleNavClick = (e: React.MouseEvent, href: string, isHash: boolean) => {
     if (isHash) {
       e.preventDefault();
+      setActiveHash(href);
       if (location.pathname !== '/') {
         navigate('/', { state: { scrollTo: href } });
       } else {
@@ -95,11 +130,11 @@ const Navigation = () => {
                 key={link.href}
                 to={link.isHash ? '/' : link.href}
                 onClick={(e) => handleNavClick(e, link.href, link.isHash)}
-                className={`text-muted-foreground hover:text-primary transition-colors cursor-pointer relative group text-xs font-mono uppercase tracking-widest ${(location.pathname === link.href) ? 'text-primary' : ''
+                className={`text-muted-foreground hover:text-primary transition-colors cursor-pointer relative group text-xs font-mono uppercase tracking-widest ${(activeHash === link.href || (location.pathname === link.href && !link.isHash)) ? 'text-primary' : ''
                   }`}
               >
                 {link.label}
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${(location.pathname === link.href) ? 'w-full' : 'w-0 group-hover:w-full'
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${(activeHash === link.href || (location.pathname === link.href && !link.isHash)) ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}></span>
               </Link>
             ))}

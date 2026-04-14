@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const OpenSource = () => {
     const contributions = [
         {
-            name: "Food Share",
+            name: "Food-Share",
             repo: "Food-Share",
             stars: "—",
             forks: "—",
@@ -38,16 +38,6 @@ const OpenSource = () => {
             role: "Creator"
         },
         {
-            name: "EcoTrack",
-            repo: "EcoTrack",
-            stars: "—",
-            forks: "—",
-            description:
-                "A smart environmental monitoring app displaying real-time sensor data such as temperature, humidity, air quality, and soil moisture with alerts and dashboards.",
-            tech: ["IoT", "JavaScript", "Dashboard"],
-            role: "Creator"
-        },
-        {
             name: "Sponsify",
             repo: "Sponsify",
             stars: "—",
@@ -58,25 +48,15 @@ const OpenSource = () => {
             role: "Founder"
         },
         {
-            name: "MindSpace",
-            repo: "MindSpace",
+            name: "EventiaPro",
+            repo: "EventiaPro",
             stars: "—",
             forks: "—",
             description:
-                "A mental health support platform enabling daily check-ins, therapist connections, 24/7 live support, and access to mental health resources.",
-            tech: ["HTML", "CSS", "JavaScript"],
+                "A Java-based secure event management system that enhances how users discover and interact with events, while giving administrators full control over event creation and participant management.",
+            tech: ["Java", "Spring Boot", "Spring Security", "Hibernate", "MySQL"],
             role: "Creator"
         },
-        {
-            name: "EduHub",
-            repo: "EduHub",
-            stars: "—",
-            forks: "—",
-            description:
-                "An online learning platform where users explore featured courses, learn from instructors, and read testimonials to easily enroll in quality education.",
-            tech: ["HTML", "CSS", "JavaScript"],
-            role: "Creator"
-        }
     ];
 
 

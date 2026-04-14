@@ -29,9 +29,9 @@ const BlogSection = () => {
     },
     {
       id: 2,
-      title: "EcoTrack: IoT for a Greener Future",
-      excerpt: "EcoTrack highlights how IoT technologies can support sustainability and environmental awareness.",
-      content: "EcoTrack highlights how Internet of Things (IoT) technologies can support sustainability and environmental awareness through accessible, data-driven solutions.\n\nFeatured Topics:\n• Low-cost IoT sensor deployment\n• Real-time environmental data visualization\n• Smart farming and data-driven agriculture\n• Air quality monitoring and public health",
+      title: "Food-Share: IoT for a Greener Future",
+      excerpt: "Food-Share highlights how IoT technologies can support sustainability and environmental awareness.",
+      content: "Food-Share highlights how Internet of Things (IoT) technologies can support sustainability and environmental awareness through accessible, data-driven solutions.\n\nFeatured Topics:\n• Low-cost IoT sensor deployment\n• Real-time environmental data visualization\n• Smart farming and data-driven agriculture\n• Air quality monitoring and public health",
       date: "2025-08-20",
       readTime: "4 min read",
       category: "IoT & Sustainability",
@@ -39,26 +39,6 @@ const BlogSection = () => {
     },
     {
       id: 3,
-      title: "MindSpace: Mental Health Support Platform",
-      excerpt: "MindSpace focuses on promoting mental well-being through supportive digital tools designed to help manage stress.",
-      content: "MindSpace focuses on promoting mental well-being through education, awareness, and supportive digital tools designed to help users manage stress and improve emotional balance.\n\nFeatured Topics:\n• Stress and anxiety management strategies\n• Personal mental health journeys\n• Mindfulness, journaling, and meditation guides",
-      date: "2024-12-10",
-      readTime: "6 min read",
-      category: "Mental Health",
-      tags: ["HealthTech", "Mindfulness", "Wellness"]
-    },
-    {
-      id: 4,
-      title: "Food-Share: Reducing Food Waste & Connecting Communities",
-      excerpt: "Food-Share connects people with extra food to those in need, tackling food waste and promoting sharing.",
-      content: "Food-Share is a platform designed to reduce food waste and help people access free or shared meals easily.\n\nFeatured Topics:\n• Connecting donors with communities in need\n• Real-time tracking of available food\n• Mobile-friendly interface for quick sharing\n• Promoting sustainability through community-driven initiatives",
-      date: "2025-09-01",
-      readTime: "5 min read",
-      category: "Social Impact",
-      tags: ["FoodTech", "Sustainability", "Community"]
-    },
-    {
-      id: 5,
       title: "HealthConnect: Bridging Patients & Providers",
       excerpt: "HealthConnect allows patients to access healthcare services, book appointments, and receive virtual support seamlessly.",
       content: "HealthConnect is a platform that bridges patients and healthcare providers, allowing users to manage appointments, access health resources, and receive virtual support.\n\nFeatured Topics:\n• Easy appointment booking\n• Access to trusted health resources\n• Virtual consultations and telehealth support\n• Mobile-first design for accessibility",
@@ -68,7 +48,7 @@ const BlogSection = () => {
       tags: ["Healthcare", "UI/UX", "MobileApp"]
     },
     {
-      id: 6,
+      id: 4,
       title: "Sponsify: Connecting Street Children with Sponsors",
       excerpt: "Sponsify makes it easy to support education, healthcare, and daily needs for street children through an intuitive platform.",
       content: "Sponsify is a web platform that connects street children with sponsors, helping them access education, healthcare, and essential support.\n\nFeatured Topics:\n• Transparent sponsor-to-child connection\n• Mobile-friendly tracking of donations\n• Interactive UI for easy navigation\n• Promoting social impact through technology",
@@ -78,14 +58,14 @@ const BlogSection = () => {
       tags: ["Community", "Education", "SocialTech"]
     },
     {
-      id: 7,
-      title: "EduHub: Online Learning Platform",
-      excerpt: "EduHub helps learners explore courses, access instructors, and enroll in educational content with ease.",
-      content: "EduHub is an online learning platform where users can explore featured courses, learn from instructors, and read testimonials — making learning accessible and engaging.\n\nFeatured Topics:\n• Course discovery and enrollment\n• Instructor-student interaction\n• Testimonials and progress tracking\n• Mobile-friendly learning experience",
-      date: "2025-09-10",
-      readTime: "5 min read",
-      category: "EdTech",
-      tags: ["Education", "Learning", "UI/UX"]
+      id: 5,
+      title: "EventiaPro: Building Secure Event Management with Java",
+      excerpt: "EventiaPro explores how enterprise-grade security and role-based access control can be applied to event management using Spring Boot.",
+      content: "EventiaPro is a Java-based event management platform that gives administrators full control over event lifecycles while delivering a seamless experience for attendees.\n\nFeatured Topics:\n• JWT authentication and Spring Security integration\n• Role-based access control for multi-user workflows\n• Hibernate ORM for robust data management\n• Admin dashboards for participant and event control",
+      date: "2025-10-12",
+      readTime: "6 min read",
+      category: "Enterprise Dev",
+      tags: ["Java", "SpringBoot", "Security"]
     }
   ];
 

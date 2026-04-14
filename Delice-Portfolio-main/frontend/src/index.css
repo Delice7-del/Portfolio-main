@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,19 +9,19 @@
 
 @layer base {
   :root {
-    /* LIGHT MODE: Monochrome (Black, White, Grey) */
+    /* LIGHT MODE: Monochrome with Muted Amber Accents */
     --background: 0 0% 100%;
     /* #ffffff */
-    --surface: 0 0% 98%;
-    /* #fafafa */
+    --surface: 0 0% 95%;
+    /* #f2f2f2 — gives cards visible lift against white pages */
     --surface-elevated: 0 0% 100%;
     /* #ffffff */
     --foreground: 0 0% 0%;
     /* #000000 */
 
-    /* Primary: Pure Black for high contrast actions */
-    --primary: 0 0% 0%;
-    /* #000000 */
+    /* Primary: Muted Amber Gold */
+    --primary: 38 75% 42%;
+    /* #ba7e1b Muted Amber */
     --primary-foreground: 0 0% 100%;
 
     /* Secondary: Subtle Grey */
@@ -29,7 +29,7 @@
     /* #f5f5f5 */
     --secondary-foreground: 0 0% 0%;
 
-    --accent: 0 0% 0%;
+    --accent: 38 75% 42%;
     --accent-foreground: 0 0% 100%;
 
     /* Neutrals */
@@ -39,8 +39,7 @@
     --border: 0 0% 85%;
     /* Soft Grey border */
     --input: 0 0% 85%;
-    --ring: 0 0% 0%;
-    /* Black focus ring */
+    --ring: 38 75% 42%;
 
     /* Shadows - Clean & Sharp */
     --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -52,41 +51,41 @@
   }
 
   .dark {
-    /* DARK MODE: Deep, Tech, Immersive (Preserved) */
-    --background: 218 52% 8%;
-    /* #0a1120 Deep Navy Blue */
-    --surface: 220 10% 4%;
-    /* #090A0D */
-    --surface-elevated: 220 10% 8%;
-    /* #121418 */
+    /* DARK MODE: Deep Charcoal & Muted Amber */
+    --background: 220 10% 10%;
+    /* #1a1a1c Deep Charcoal */
+    --surface: 220 10% 12%;
+    /* #1e1e21 Slightly lighter grey */
+    --surface-elevated: 220 10% 15%;
+    /* #252529 For elevated cards */
     --foreground: 0 0% 100%;
     /* #FFFFFF */
 
-    /* Primary: Electric Blue (Vibrant on black) */
-    --primary: 220 90% 56%;
-    /* #3b82f6 */
+    /* Primary: Muted Amber Gold (Less shiny/bright) */
+    --primary: 38 75% 42%;
+    /* #ba7e1b Muted Amber */
     --primary-foreground: 0 0% 100%;
 
     /* Secondary */
     --secondary: 220 15% 20%;
-    /* Dark Grey Blue */
+    /* Dark Grey Blue/Neutral */
     --secondary-foreground: 0 0% 100%;
 
-    --accent: 220 90% 56%;
+    --accent: 38 75% 42%;
     --accent-foreground: 0 0% 100%;
 
     /* Neutrals */
-    --muted: 220 10% 12%;
+    --muted: 220 10% 18%;
     --muted-foreground: 220 10% 65%;
-    --border: 220 10% 12%;
-    --input: 220 10% 12%;
-    --ring: 220 90% 56%;
+    --border: 220 10% 18%;
+    --input: 220 10% 18%;
+    --ring: 38 75% 42%;
 
-    /* Shadows - Deep */
-    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.5);
-    --shadow-floating: 0 10px 40px rgba(0, 0, 0, 0.8);
+    /* Shadows - Deep & Warm */
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.6);
+    --shadow-floating: 0 10px 40px rgba(0, 0, 0, 0.9);
 
-    --logo-text: 220 90% 56%;
+    --logo-text: 38 75% 42%;
   }
 }
 
@@ -97,7 +96,7 @@
 
   body {
     @apply bg-background text-foreground antialiased overflow-x-hidden;
-    font-family: 'Poppins', system-ui, -apple-system, sans-serif !important;
+    font-family: 'Urbanist', system-ui, -apple-system, sans-serif !important;
   }
 
   h1,
@@ -106,7 +105,7 @@
   h4,
   h5,
   h6 {
-    font-family: 'Poppins', system-ui, -apple-system, sans-serif !important;
+    font-family: 'Urbanist', system-ui, -apple-system, sans-serif !important;
     letter-spacing: -0.02em;
   }
 
@@ -171,4 +170,113 @@
     border-color: hsl(var(--primary));
     transform: translateY(-5px);
   }
+
+  /* Abstract Tech Design Utilities */
+  .bg-tech-pattern {
+    background-image: 
+      radial-gradient(circle at 2px 2px, rgba(186, 126, 27, 0.05) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  .tech-card-visual {
+    @apply relative overflow-hidden bg-surface-elevated border border-white/5 h-48 flex items-center justify-center;
+  }
+
+  .abstract-geometric {
+    @apply absolute inset-0 opacity-20 pointer-events-none;
+    background-image: 
+      linear-gradient(rgba(186, 126, 27, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(186, 126, 27, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .glow-circle {
+    @apply absolute w-32 h-32 rounded-full blur-3xl opacity-20;
+    background: radial-gradient(circle, hsl(var(--primary)), transparent);
+  }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   LIGHT MODE — ADAPTIVE OVERRIDES
+   Fixes hardcoded dark-optimized Tailwind utilities so the portfolio
+   looks equally polished when switching to light mode.
+   Scoped to html:not(.dark) so dark mode is never affected.
+═══════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Border utilities: white-opacity borders invisible on light bg ── */
+html:not(.dark) .border-white\/5  { border-color: rgba(0, 0, 0, 0.07) !important; }
+html:not(.dark) .border-white\/8  { border-color: rgba(0, 0, 0, 0.08) !important; }
+html:not(.dark) .border-white\/10 { border-color: rgba(0, 0, 0, 0.10) !important; }
+html:not(.dark) .border-white\/4  { border-color: rgba(0, 0, 0, 0.06) !important; }
+html:not(.dark) .border-white\/20 { border-color: rgba(0, 0, 0, 0.14) !important; }
+
+/* ── 2. Hover backgrounds: white-opacity hovers invisible on light ── */
+html:not(.dark) .hover\:bg-white\/4:hover  { background-color: rgba(0, 0, 0, 0.04) !important; }
+html:not(.dark) .hover\:bg-white\/5:hover  { background-color: rgba(0, 0, 0, 0.05) !important; }
+html:not(.dark) .hover\:bg-white\/10:hover { background-color: rgba(0, 0, 0, 0.06) !important; }
+
+/* ── 3. Text opacity utilities: white text invisible on light bg ── */
+html:not(.dark) .text-white\/20 { color: rgba(0, 0, 0, 0.25) !important; }
+html:not(.dark) .text-white\/40 { color: rgba(0, 0, 0, 0.42) !important; }
+html:not(.dark) .text-white\/60 { color: rgba(0, 0, 0, 0.55) !important; }
+
+/* Exception: testimonial photo panels have dark overlays — keep white legible */
+html:not(.dark) #testimonials .text-white,
+html:not(.dark) #testimonials .text-white\/90,
+html:not(.dark) #testimonials .text-white\/60,
+html:not(.dark) #testimonials .text-white\/20 {
+  color: inherit !important;
+}
+
+/* ── 4. Floating cards: add shadow + white surface to lift from bg ── */
+html:not(.dark) .floating-card {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+}
+
+html:not(.dark) .floating-card:hover {
+  border-color: hsl(var(--primary) / 0.35) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10), 0 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* ── 5. Surface & elevated backgrounds ── */
+html:not(.dark) .bg-surface-elevated { background-color: #ffffff !important; }
+
+/* ── 6. Skill progress bar track ── */
+html:not(.dark) .bg-muted\/30 { background-color: rgba(0, 0, 0, 0.08) !important; }
+
+/* ── 7. Mobile nav panel border ── */
+html:not(.dark) nav .border-t { border-top-color: rgba(0, 0, 0, 0.08) !important; }
+
+/* ── 8. Navigation glass in light mode ── */
+html:not(.dark) .glass-effect {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ── 9. Gradient surface sections ── */
+html:not(.dark) .bg-gradient-surface {
+  background: linear-gradient(135deg, hsl(0, 0%, 97%) 0%, hsl(0, 0%, 94%) 100%) !important;
+}
+
+/* ── 10. Tech card visuals (project card headers) ── */
+html:not(.dark) .tech-card-visual {
+  background-color: hsl(0, 0%, 96%) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ── 11. Abstract geometric grid pattern (project card headers) ── */
+html:not(.dark) .abstract-geometric {
+  background-image:
+    linear-gradient(rgba(186, 126, 27, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(186, 126, 27, 0.15) 1px, transparent 1px) !important;
+}
+
+/* ── 12. Inline-code / mono tags ── */
+html:not(.dark) code { color: hsl(var(--foreground)) !important; }
+
+/* ── 13. Section separators (border-t border-white/5 pattern) ── */
+/* Already handled by rule #1, this ensures section top borders are visible */
+html:not(.dark) section { border-top-color: rgba(0, 0, 0, 0.08); }
