@@ -194,6 +194,12 @@
     @apply absolute w-32 h-32 rounded-full blur-3xl opacity-20;
     background: radial-gradient(circle, hsl(var(--primary)), transparent);
   }
+
+  .bg-bora-grid {
+    background-image: 
+      repeating-linear-gradient(45deg, rgba(186, 126, 27, 0.25) 0, rgba(186, 126, 27, 0.25) 1px, transparent 0, transparent 60px),
+      repeating-linear-gradient(-45deg, rgba(186, 126, 27, 0.25) 0, rgba(186, 126, 27, 0.25) 1px, transparent 0, transparent 60px);
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════

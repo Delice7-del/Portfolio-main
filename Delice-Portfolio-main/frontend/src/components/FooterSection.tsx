@@ -10,6 +10,16 @@ const FooterSection = () => {
 
   return (
     <footer className="bg-surface border-t border-white/10 pt-20 pb-10 relative overflow-hidden">
+      {/* BORA Background Pattern - Applied Inline for visibility guarantee */}
+      <div 
+        className="absolute inset-0 pointer-events-none z-0" 
+        style={{ 
+          backgroundImage: `
+            repeating-linear-gradient(45deg, rgba(186, 126, 27, 0.3) 0, rgba(186, 126, 27, 0.3) 1.5px, transparent 0, transparent 60px),
+            repeating-linear-gradient(-45deg, rgba(186, 126, 27, 0.3) 0, rgba(186, 126, 27, 0.3) 1.5px, transparent 0, transparent 60px)
+          `
+        }} 
+      />
 
       {/* Footer Top */}
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-20 relative z-10">

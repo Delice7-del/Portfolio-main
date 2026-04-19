@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { LuMenu, LuX, LuDownload } from 'react-icons/lu';
+import { LuMenu, LuX, LuDownload, LuBot } from 'react-icons/lu';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -19,6 +19,15 @@ const Navigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const navLinks = [
+    { href: '#home', label: 'Home', isHash: true },
+    { href: '#about', label: 'About', isHash: true },
+    { href: '#projects', label: 'Projects', isHash: true },
+    { href: '#testimonials', label: 'Testimonials', isHash: true },
+    { href: '#certifications', label: 'Certifications', isHash: true },
+    { href: '#contact', label: 'Contact', isHash: true }
+  ];
 
   // Scroll Spy Logic
   useEffect(() => {
@@ -55,15 +64,6 @@ const Navigation = () => {
     };
   }, []);
 
-  const navLinks = [
-    { href: '#home', label: 'Home', isHash: true },
-    { href: '#about', label: 'About', isHash: true },
-    { href: '#projects', label: 'Projects', isHash: true },
-    { href: '#testimonials', label: 'Testimonials', isHash: true },
-    { href: '#certifications', label: 'Certifications', isHash: true },
-    { href: '#contact', label: 'Contact', isHash: true }
-  ];
-
   const handleNavClick = (e: React.MouseEvent, href: string, isHash: boolean) => {
     if (isHash) {
       e.preventDefault();
@@ -82,7 +82,6 @@ const Navigation = () => {
     }
   };
 
-  // Effect to handle scrolling when navigating back to home from another page
   useEffect(() => {
     if (location.pathname === '/' && location.state && (location.state as any).scrollTo) {
       const target = (location.state as any).scrollTo;
@@ -91,19 +90,19 @@ const Navigation = () => {
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
-        // Clear state to prevent scrolling again on refresh
         window.history.replaceState({}, document.title);
       }, 100);
     }
   }, [location]);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-      ? 'glass-effect backdrop-blur-lg shadow-lg bg-background/80'
-      : 'bg-transparent'
+    <nav className="fixed top-0 left-0 right-0 z-50 pt-6 px-4 pointer-events-none">
+      <div className={`max-w-6xl mx-auto rounded-full transition-all duration-500 pointer-events-auto border border-white/10 ${
+        isScrolled 
+          ? 'bg-background/80 backdrop-blur-xl shadow-2xl py-3 px-8 translate-y-[-10px]' 
+          : 'bg-background/40 backdrop-blur-md py-4 px-10'
       }`}>
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
             to="/"
@@ -114,49 +113,50 @@ const Navigation = () => {
               }
               setIsMobileMenuOpen(false);
             }}
-            className="flex items-center space-x-2 group"
+            className="flex items-center space-x-3 group"
           >
-            <div className="flex items-center space-x-2">
+            <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center border border-primary/20 group-hover:bg-primary/20 transition-all duration-300">
+              <LuBot className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
             </div>
-            <span className="font-bold text-foreground group-hover:text-primary transition-colors tracking-tighter text-xl">
+            <span className="font-bold text-foreground transition-colors tracking-tight text-xl uppercase">
               KEZA
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center bg-white/5 border border-white/5 rounded-full px-2 py-1 mx-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.isHash ? '/' : link.href}
                 onClick={(e) => handleNavClick(e, link.href, link.isHash)}
-                className={`text-muted-foreground hover:text-primary transition-colors cursor-pointer relative group text-xs font-mono uppercase tracking-widest ${(activeHash === link.href || (location.pathname === link.href && !link.isHash)) ? 'text-primary' : ''
-                  }`}
+                className={`px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium ${
+                  activeHash === link.href || (location.pathname === link.href && !link.isHash)
+                    ? 'bg-white/10 text-primary'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
               >
                 {link.label}
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${(activeHash === link.href || (location.pathname === link.href && !link.isHash)) ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`}></span>
               </Link>
             ))}
+          </div>
 
+          <div className="flex items-center space-x-3">
             {/* Theme Toggle */}
             <ThemeToggle />
 
             {/* Desktop CTA */}
-            <Button size="sm" className="tech-button rounded-none" asChild>
+            <Button className="hidden lg:flex rounded-full px-6 bg-primary hover:opacity-90 text-white font-semibold transition-all shadow-lg shadow-primary/20" asChild>
               <Link to="/resume">
                 <LuDownload className="mr-2 h-4 w-4" />
-                RESUME
+                Resume
               </Link>
             </Button>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center gap-4 lg:hidden">
-            <ThemeToggle />
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-foreground hover:text-primary transition-colors"
+              className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-colors"
             >
               {isMobileMenuOpen ? <LuX className="h-6 w-6" /> : <LuMenu className="h-6 w-6" />}
             </button>
@@ -164,24 +164,29 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`lg:hidden transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'
-          }`}>
-          <div className="py-6 space-y-1 bg-background/95 backdrop-blur-md px-4 border-t border-white/5">
+        <div className={`lg:hidden transition-all duration-500 overflow-hidden ${
+          isMobileMenuOpen ? 'max-h-[80vh] opacity-100 mt-6' : 'max-h-0 opacity-0'
+        }`}>
+          <div className="py-6 space-y-2 bg-background/60 backdrop-blur-xl rounded-3xl px-6 border border-white/10 mb-4 shadow-2xl">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.isHash ? '/' : link.href}
                 onClick={(e) => handleNavClick(e, link.href, link.isHash)}
-                className="block py-4 text-muted-foreground hover:text-primary transition-colors cursor-pointer border-b border-white/5 last:border-0 font-mono text-sm uppercase tracking-widest"
+                className={`block py-3 px-4 rounded-xl transition-all ${
+                  activeHash === link.href || (location.pathname === link.href && !link.isHash)
+                    ? 'bg-primary/10 text-primary font-semibold'
+                    : 'text-muted-foreground hover:bg-white/5 hover:text-foreground'
+                }`}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="pt-6">
-              <Button size="sm" className="w-full tech-button rounded-none h-14" asChild>
+            <div className="pt-4">
+              <Button className="w-full rounded-2xl h-14 bg-primary text-white font-bold text-lg shadow-xl shadow-primary/20" asChild>
                 <Link to="/resume" onClick={() => setIsMobileMenuOpen(false)}>
-                  <LuDownload className="mr-2 h-4 w-4" />
-                  RESUME / CV
+                  <LuDownload className="mr-2 h-5 w-5" />
+                  Download Resume
                 </Link>
               </Button>
             </div>
