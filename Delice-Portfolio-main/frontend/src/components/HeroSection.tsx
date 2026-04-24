@@ -50,9 +50,6 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="lg:w-1/2 space-y-8"
           >
-            <div className="flex items-center space-x-3 text-primary font-mono mb-4">
-              <span className="text-sm tracking-[0.2em] uppercase">// Design & Engineering Excellence</span>
-            </div>
 
             <h1 className="text-6xl md:text-7xl font-bold tracking-tight text-foreground leading-tight">
               Designing the <br />

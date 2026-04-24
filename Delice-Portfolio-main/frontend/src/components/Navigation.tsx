@@ -183,12 +183,12 @@ const Navigation = () => {
               </Link>
             ))}
             <div className="pt-4">
-              <Button className="w-full rounded-2xl h-14 bg-primary text-white font-bold text-lg shadow-xl shadow-primary/20" asChild>
-                <Link to="/resume" onClick={() => setIsMobileMenuOpen(false)}>
+              <a href="http://localhost:5000/api/download-cv" download className="w-full">
+                <Button className="w-full rounded-2xl h-14 bg-primary text-white font-bold text-lg shadow-xl shadow-primary/20">
                   <LuDownload className="mr-2 h-5 w-5" />
                   Download Resume
-                </Link>
-              </Button>
+                </Button>
+              </a>
             </div>
           </div>
         </div>

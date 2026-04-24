@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { LuCalendar, LuArrowRight, LuBookOpen } from 'react-icons/lu';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { useToast } from '@/hooks/use-toast';
 
 interface BlogPost {
   id: number;
@@ -69,6 +70,34 @@ const BlogSection = () => {
     }
   ];
 
+
+  const [email, setEmail] = useState('');
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setIsSubscribing(true);
+    try {
+      const response = await fetch('http://localhost:5000/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        toast({ title: 'Subscribed!', description: 'You have successfully subscribed to the newsletter.' });
+        setEmail('');
+      } else {
+        throw new Error(data.error || 'Subscription failed');
+      }
+    } catch (error: any) {
+      toast({ title: 'Error', description: error.message, variant: 'destructive' });
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -191,14 +220,22 @@ const BlogSection = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="tech-button">
-                  Subscribe to Newsletter
-                </Button>
-                <Button variant="outline" className="border-primary/30 hover:bg-primary/10">
-                  Follow on Dev.to
-                </Button>
-              </div>
+              <form onSubmit={handleSubscribe} className="flex flex-col gap-4 max-w-md mx-auto mb-6">
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="flex-1 bg-background border border-white/10 rounded-none px-4 py-2 focus:border-primary outline-none text-sm"
+                  />
+                  <Button type="submit" disabled={isSubscribing} className="tech-button rounded-none">
+                    {isSubscribing ? 'Subscribing...' : 'Subscribe'}
+                  </Button>
+                </div>
+              </form>
+
             </div>
           </div>
         </div>

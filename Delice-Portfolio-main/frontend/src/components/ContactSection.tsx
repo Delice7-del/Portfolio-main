@@ -80,26 +80,29 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await emailjs.send(
-        'service_23tcnrh',
-        'template_k6mbj34',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        'hLztA9H0TAIxUQVsC'
-      );
-      toast({
-        title: 'Message sent!',
-        description: "I'll get back to you within 24 hours.",
+        body: JSON.stringify(formData),
       });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch {
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: 'Message sent!',
+          description: data.message || "I'll get back to you within 24 hours.",
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error(data.error || 'Failed to send message');
+      }
+    } catch (error: any) {
       toast({
         title: 'Failed to send',
-        description: 'Something went wrong. Please try again.',
+        description: error.message || 'Something went wrong. Please try again.',
         variant: 'destructive',
       });
     } finally {

@@ -11,33 +11,47 @@ import Certifications from "./pages/Certifications";
 import OpenSource from "./pages/OpenSource";
 import Resume from "./pages/Resume";
 import Journal from "./pages/Journal";
+import CaseStudyDetail from "./pages/CaseStudyDetail";
 import NotFound from "./pages/NotFound";
+
+import { useState } from "react";
+import Preloader from "./components/Preloader";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollManager>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/case-studies" element={<CaseStudies />} />
-              <Route path="/certifications" element={<Certifications />} />
-              <Route path="/open-source" element={<OpenSource />} />
-              <Route path="/resume" element={<Resume />} />
-              <Route path="/journal" element={<Journal />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </ScrollManager>
-        </BrowserRouter>
-      </TooltipProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <TooltipProvider>
+          <Preloader onComplete={() => setIsLoading(false)} />
+          {!isLoading && (
+            <>
+              <Toaster />
+              <Sonner />
+              <BrowserRouter>
+                <ScrollManager>
+                  <Routes>
+                    <Route path="/" element={<Index />} />
+                    <Route path="/case-studies" element={<CaseStudies />} />
+                    <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
+                    <Route path="/certifications" element={<Certifications />} />
+                    <Route path="/open-source" element={<OpenSource />} />
+                    <Route path="/resume" element={<Resume />} />
+                    <Route path="/journal" element={<Journal />} />
+                    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </ScrollManager>
+              </BrowserRouter>
+            </>
+          )}
+        </TooltipProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

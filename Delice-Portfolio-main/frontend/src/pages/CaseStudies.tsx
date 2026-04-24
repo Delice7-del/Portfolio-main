@@ -165,9 +165,11 @@ const CaseStudies = () => {
                                     <p className="text-lg text-foreground/80 leading-relaxed mb-10">
                                         {cs.description}
                                     </p>
-                                    <Button className="tech-button h-14 px-8 rounded-none">
-                                        View Project Details
-                                    </Button>
+                                    <Link to={`/case-studies/${cs.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                                        <Button className="tech-button h-14 px-8 rounded-none">
+                                            View Project Details
+                                        </Button>
+                                    </Link>
                                 </div>
 
                                 <div className="grid gap-6">
