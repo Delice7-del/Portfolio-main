@@ -21,7 +21,7 @@ const Resume = () => {
                         <h1 className="text-5xl md:text-7xl font-bold mb-4 gradient-text">Resume</h1>
                         <p className="text-xl text-muted-foreground">UI/UX Designer | Frontend & Mobile Developer</p>
                     </header>
-                    <a href="http://localhost:5000/api/download-cv" download>
+                    <a href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/download-cv`} download>
                         <Button className="tech-button h-14 px-8 rounded-none text-lg">
                             <LuDownload className="mr-3 w-5 h-5" /> Download Full CV
                         </Button>

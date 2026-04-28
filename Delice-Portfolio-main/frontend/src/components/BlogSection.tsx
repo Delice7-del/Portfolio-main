@@ -80,7 +80,7 @@ const BlogSection = () => {
     if (!email) return;
     setIsSubscribing(true);
     try {
-      const response = await fetch('http://localhost:5000/api/subscribe', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/subscribe`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),

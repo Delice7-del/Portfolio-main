@@ -29,7 +29,7 @@ const CaseStudyDetail = () => {
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/projects');
+        const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/projects`);
         const data = await response.json();
         const found = data.find((p: Project) => p.id === id);
         setProject(found || null);
