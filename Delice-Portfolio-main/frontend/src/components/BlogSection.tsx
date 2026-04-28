@@ -60,13 +60,13 @@ const BlogSection = () => {
     },
     {
       id: 5,
-      title: "EventiaPro: Building Secure Event Management with Java",
-      excerpt: "EventiaPro explores how enterprise-grade security and role-based access control can be applied to event management using Spring Boot.",
-      content: "EventiaPro is a Java-based event management platform that gives administrators full control over event lifecycles while delivering a seamless experience for attendees.\n\nFeatured Topics:\n• JWT authentication and Spring Security integration\n• Role-based access control for multi-user workflows\n• Hibernate ORM for robust data management\n• Admin dashboards for participant and event control",
+      title: "BORA AI: Revolutionizing Recruitment with AI",
+      excerpt: "BORA AI explores how artificial intelligence can analyze and rank job applicants to help recruiters make better hiring decisions.",
+      content: "BORA AI is a web-based dashboard that uses AI to analyze and rank job applicants from resumes and structured profiles.\n\nFeatured Topics:\n• AI-powered resume parsing and analysis\n• Candidate scoring based on qualifications\n• Transparent explanations for rankings\n• Streamlined recruitment workflow",
       date: "2025-10-12",
       readTime: "6 min read",
-      category: "Enterprise Dev",
-      tags: ["Java", "SpringBoot", "Security"]
+      category: "AI/ML",
+      tags: ["AI", "Recruitment", "Machine Learning"]
     }
   ];
 

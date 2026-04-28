@@ -48,14 +48,14 @@ const OpenSource = () => {
             role: "Founder"
         },
         {
-            name: "EventiaPro",
-            repo: "EventiaPro",
+            name: "BORA AI",
+            repo: "BORA-AI",
             stars: "—",
             forks: "—",
             description:
-                "A Java-based secure event management system that enhances how users discover and interact with events, while giving administrators full control over event creation and participant management.",
-            tech: ["Java", "Spring Boot", "Spring Security", "Hibernate", "MySQL"],
-            role: "Creator"
+                "A web-based dashboard that uses AI to analyze and rank job applicants from resumes and structured profiles.",
+            tech: ["React", "Node.js", "Express", "MongoDB", "AI/ML"],
+            role: "Founder"
         },
     ];
 

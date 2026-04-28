@@ -147,14 +147,6 @@ const CertificationsSection = () => {
                                             <span className="text-[9px] font-mono">{cert.credentialId}</span>
                                         </div>
                                     </div>
-                                    <Button
-                                        variant="ghost"
-                                        size="sm"
-                                        className="text-primary h-8 px-3 hover:bg-primary hover:text-white rounded-none text-xs font-mono group/btn"
-                                    >
-                                        Verify
-                                        <LuExternalLink className="ml-1.5 w-3 h-3 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                                    </Button>
                                 </div>
                             </div>
                         </motion.div>

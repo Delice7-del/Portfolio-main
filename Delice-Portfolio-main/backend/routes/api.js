@@ -171,18 +171,18 @@ router.get('/projects', (req, res) => {
         impact: "Improved sponsor engagement and provided a transparent way to support children's long-term development."
     },
     {
-        id: "eventiapro",
-        title: "EventiaPro",
-        subtitle: "Secure Event Management for Communities",
-        category: "Enterprise Java Platform",
-        description: "A Java-based secure event management system that enhances how users discover and interact with events while giving administrators full control.",
-        technologies: ["Java", "Spring Boot", "Spring Security", "Hibernate", "MySQL"],
-        images: ["/projects/eventiapro-1.jpg"],
-        challenges: "Designing a platform that simultaneously serves multiple user roles — attendees, organizers, and admins — each with distinct permissions.",
-        solutions: "Built with Spring Boot and Spring Security, implementing JWT-based authentication, role-based access control, and Hibernate ORM.",
-        githubUrl: "https://github.com/Delice7-del/EventiaPro",
-        liveUrl: "#",
-        impact: "Delivered a fully auditable event lifecycle system with secure participant tracking."
+        id: "bora-ai",
+        title: "BORA AI",
+        subtitle: "AI-Powered Applicant Tracking System",
+        category: "AI/ML Platform",
+        description: "A web-based dashboard that uses AI to analyze and rank job applicants from resumes and structured profiles.",
+        technologies: ["React", "Node.js", "Express", "MongoDB", "AI/ML"],
+        images: ["/projects/bora-ai-1.jpg"],
+        challenges: "Creating an unbiased, efficient system to screen and rank candidates based on qualifications and skills.",
+        solutions: "Built an AI-powered dashboard that parses resumes, scores candidates, and provides explanations for rankings.",
+        githubUrl: "https://github.com/Delice7-del/BORA-AI",
+        liveUrl: "https://bora-ai-web.vercel.app/",
+        impact: "Reduced recruitment time by 60% and helped recruiters quickly identify the best candidates."
     }
   ];
   res.json(projects);

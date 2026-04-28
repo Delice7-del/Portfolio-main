@@ -7,7 +7,6 @@ import ScrollManager from "./components/ScrollManager";
 import { ThemeProvider } from "./components/ThemeProvider";
 import Index from "./pages/Index";
 import CaseStudies from "./pages/CaseStudies";
-import Certifications from "./pages/Certifications";
 import OpenSource from "./pages/OpenSource";
 import Resume from "./pages/Resume";
 import Journal from "./pages/Journal";
@@ -37,7 +36,6 @@ const App = () => {
                     <Route path="/" element={<Index />} />
                     <Route path="/case-studies" element={<CaseStudies />} />
                     <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
-                    <Route path="/certifications" element={<Certifications />} />
                     <Route path="/open-source" element={<OpenSource />} />
                     <Route path="/resume" element={<Resume />} />
                     <Route path="/journal" element={<Journal />} />

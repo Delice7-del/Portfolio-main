@@ -143,14 +143,6 @@ const CaseStudyDetail = () => {
                     </a>
                   </Button>
                 )}
-                {project.githubUrl && (
-                  <Button variant="outline" className="w-full h-12 rounded-none border-white/10 hover:border-primary/50" asChild>
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <LuGithub className="mr-2 h-4 w-4" />
-                      View Source
-                    </a>
-                  </Button>
-                )}
               </div>
             </div>
           </div>

@@ -25,7 +25,6 @@ const Navigation = () => {
     { href: '#about', label: 'About', isHash: true },
     { href: '#projects', label: 'Projects', isHash: true },
     { href: '#testimonials', label: 'Testimonials', isHash: true },
-    { href: '#certifications', label: 'Certifications', isHash: true },
     { href: '#contact', label: 'Contact', isHash: true }
   ];
 

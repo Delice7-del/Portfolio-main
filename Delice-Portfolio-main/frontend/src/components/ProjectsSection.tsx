@@ -111,7 +111,7 @@ const ProjectsSection = () => {
       description: 'A modular healthcare system designed to manage patients, professionals, and medical records with advanced security.',
       technologies: ['React', 'Express', 'Node.js', 'MongoDB'],
       category: 'health',
-      demoUrl: '#',
+      demoUrl: 'https://health-connect-khaki-six.vercel.app/',
       githubUrl: 'https://github.com/Delice7-del/HealthConnect',
       image: 'health',
       label: 'health · care network',
@@ -124,7 +124,7 @@ const ProjectsSection = () => {
       description: 'Real-time surveillance system that uses computer vision to detect and alert users about critical events.',
       technologies: ['Flutter', 'Python', 'TensorFlow', 'FastAPI'],
       category: 'security',
-      demoUrl: '#',
+      demoUrl: 'https://drive.google.com/file/d/13FfVxqvhsGLHTCSo4II5dWFUF4lX6lZk/view?usp=sharing',
       githubUrl: 'https://github.com/Delice7-del/CamAI',
       image: 'ai',
       label: 'ai · intelligent monitoring',
@@ -137,7 +137,7 @@ const ProjectsSection = () => {
       description: 'A community-driven platform that connects people with surplus food to those in need, minimizing waste.',
       technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
       category: 'food',
-      demoUrl: '#',
+      demoUrl: 'https://foodshare-rho.vercel.app/',
       githubUrl: 'https://github.com/Delice7-del/Food-Share',
       image: 'social',
       label: 'social · food sharing',
@@ -150,7 +150,7 @@ const ProjectsSection = () => {
       description: 'Makes it easy to support education, healthcare, and daily needs for underprivileged children via sponsorships.',
       technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
       category: 'welfare',
-      demoUrl: '#',
+      demoUrl: 'https://sponsify-phi.vercel.app/',
       githubUrl: 'https://github.com/Delice7-del/Sponsify',
       image: 'finance',
       label: 'finance · support network',
@@ -159,14 +159,14 @@ const ProjectsSection = () => {
     },
     {
       id: 5,
-      title: 'EventiaPro',
-      description: 'A Java-based secure event management system that enhances how users discover and interact with events while giving administrators full control.',
-      technologies: ['Java', 'Spring Boot', 'Spring Security', 'Hibernate', 'MySQL'],
+      title: 'BORA AI',
+      description: 'A web-based dashboard that uses AI to analyze and rank job applicants from resumes and structured profiles.',
+      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'AI/ML'],
       category: 'welfare',
-      demoUrl: '#',
-      githubUrl: 'https://github.com/Delice7-del/EventiaPro',
-      image: 'events',
-      label: 'event-mgt · secure workflow',
+      demoUrl: 'https://bora-ai-web.vercel.app/',
+      githubUrl: 'https://github.com/Delice7-del/BORA-AI',
+      image: 'finance',
+      label: 'ai · recruitment assistant',
       featured: false,
       year: '2024',
     },
@@ -338,19 +338,6 @@ const ProjectsSection = () => {
                         </a>
                       </Button>
                     )}
-                    {project.githubUrl && (
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="flex-1 rounded-none border-white/10 hover:bg-primary hover:border-primary hover:text-white text-muted-foreground text-xs h-9"
-                        asChild
-                      >
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <LuGithub className="mr-2 h-3.5 w-3.5" />
-                          Source
-                        </a>
-                      </Button>
-                    )}
                   </div>
                 </div>
               </motion.div>
@@ -368,7 +355,7 @@ const ProjectsSection = () => {
           <div>
             <p className="text-foreground font-bold text-lg mb-1">Want to see more?</p>
             <p className="text-muted-foreground text-sm font-mono">
-              All source code is open on GitHub. Explore the rest of the work.
+              Explore the rest of my work.
             </p>
           </div>
 

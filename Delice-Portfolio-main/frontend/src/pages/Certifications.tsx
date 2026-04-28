@@ -99,9 +99,6 @@ const Certifications = () => {
                                     <p className="text-[10px] text-muted-foreground uppercase tracking-tighter">Issue Date</p>
                                     <p className="text-sm font-bold">{cert.date}</p>
                                 </div>
-                                <Button variant="ghost" size="sm" className="text-primary h-10 hover:bg-primary/10 group">
-                                    Verify <LuExternalLink className="ml-2 w-4 h-4 group-hover:scale-110 transition-transform" />
-                                </Button>
                             </div>
                         </motion.div>
                     ))}

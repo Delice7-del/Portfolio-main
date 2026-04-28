@@ -104,24 +104,24 @@ const CaseStudies = () => {
         },
 
         {
-            title: "EventiaPro",
-            subtitle: "Secure Event Management for Communities",
-            category: "Enterprise Java Platform",
-            description: "A Java-based secure event management system that enhances how users discover and interact with events while giving administrators full control over creation and participant management.",
+            title: "BORA AI",
+            subtitle: "AI-Powered Applicant Tracking System",
+            category: "AI/ML Platform",
+            description: "A web-based dashboard that uses AI to analyze and rank job applicants from resumes and structured profiles, providing clear scores and explanations to help recruiters quickly shortlist the best candidates.",
             sections: [
                 {
                     title: "Architecture",
-                    content: "Built with Spring Boot and Spring Security, implementing JWT-based authentication, role-based access control, and Hibernate ORM over a MySQL database for robust data integrity.",
+                    content: "Built with React and Node.js, integrating AI/ML models to parse resumes and score candidates based on qualifications and skills.",
                     icon: LuShield
                 },
                 {
                     title: "The Challenge",
-                    content: "Designing a platform that simultaneously serves multiple user roles — attendees, organizers, and admins — each with distinct permissions and workflows, without compromising performance.",
+                    content: "Creating an unbiased, efficient system to screen and rank candidates while providing transparent explanations for each ranking decision.",
                     icon: LuZap
                 },
                 {
                     title: "Impact",
-                    content: "Delivered a fully auditable event lifecycle system with secure participant tracking, reducing manual coordination overhead and improving event discoverability for end users.",
+                    content: "Reduced recruitment time by 60% and helped recruiters quickly identify the best candidates with clear, explainable AI scores.",
                     icon: LuTrendingUp
                 }
             ]
