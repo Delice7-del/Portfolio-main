@@ -6,6 +6,7 @@ import {
 } from 'react-icons/lu';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const MAX_MESSAGE = 500;
 
@@ -66,6 +67,7 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
+      // 1. Save to Database
       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -74,15 +76,34 @@ const ContactSection = () => {
 
       const data = await response.json();
 
-      if (response.ok) {
-        toast({
-          title: 'Message sent!',
-          description: data.message || "I'll get back to you within 24 hours.",
-        });
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        throw new Error(data.error || 'Failed to send message');
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to save message to database');
       }
+
+      // 2. Send Email via EmailJS
+      try {
+        await emailjs.send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
+          {
+            from_name:    formData.name,
+            from_email:   formData.email,
+            subject:      formData.subject,
+            message:      formData.message,
+            reply_to:     formData.email,
+          },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''
+        );
+      } catch (emailError) {
+        console.error('EmailJS sending failed:', emailError);
+        // We don't throw here so the user still gets a success message if DB save worked
+      }
+
+      toast({
+        title: 'Message sent! ✅',
+        description: "Your message has been saved and I will get back to you soon.",
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error: any) {
       toast({
         title: 'Failed to send',

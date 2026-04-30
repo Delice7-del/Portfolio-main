@@ -4,6 +4,7 @@ import { LuCalendar, LuArrowRight, LuBookOpen } from 'react-icons/lu';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 interface BlogPost {
   id: number;
@@ -80,18 +81,37 @@ const BlogSection = () => {
     if (!email) return;
     setIsSubscribing(true);
     try {
+      // 1. Save to Database
       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/subscribe`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
       });
       const data = await response.json();
-      if (response.ok) {
-        toast({ title: 'Subscribed!', description: 'You have successfully subscribed to the newsletter.' });
-        setEmail('');
-      } else {
+      
+      if (!response.ok) {
         throw new Error(data.error || 'Subscription failed');
       }
+
+      // 2. Send Notification Email via EmailJS
+      try {
+        await emailjs.send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID  || '',
+          import.meta.env.VITE_EMAILJS_SUBSCRIBE_TEMPLATE_ID || import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
+          {
+            subscriber_email: email,
+            subject: 'New Newsletter Subscriber!',
+            message: `New subscriber: ${email}`,
+          },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''
+        );
+      } catch (emailError) {
+        console.error('EmailJS sending failed:', emailError);
+        // Don't throw so the user still gets a success toast if DB worked
+      }
+
+      toast({ title: 'Subscribed! 🎉', description: 'You have successfully subscribed to the newsletter.' });
+      setEmail('');
     } catch (error: any) {
       toast({ title: 'Error', description: error.message, variant: 'destructive' });
     } finally {

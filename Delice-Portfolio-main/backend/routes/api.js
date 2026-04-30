@@ -1,36 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const nodemailer = require('nodemailer');
 const Message = require('../models/Message');
 const Subscriber = require('../models/Subscriber');
 const PDFDocument = require('pdfkit');
-
-// Helper to send email
-const sendEmail = async (name, email, subject, message) => {
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: process.env.SMTP_PORT,
-    secure: false, // true for 465, false for other ports
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-  });
-
-  const mailOptions = {
-    from: `"${name}" <${email}>`,
-    to: process.env.RECEIVER_EMAIL,
-    subject: `New Portfolio Message: ${subject}`,
-    text: message,
-    html: `<p><strong>Name:</strong> ${name}</p>
-           <p><strong>Email:</strong> ${email}</p>
-           <p><strong>Subject:</strong> ${subject}</p>
-           <p><strong>Message:</strong></p>
-           <p>${message}</p>`,
-  };
-
-  await transporter.sendMail(mailOptions);
-};
 
 // @route   POST api/contact
 // @desc    Send a message via contact form
@@ -45,14 +17,7 @@ router.post('/contact', async (req, res) => {
     const newMessage = new Message({ name, email, subject, message });
     await newMessage.save();
 
-    // Try to send email, but don't fail the request if it fails (as SMTP might not be configured yet)
-    try {
-      await sendEmail(name, email, subject, message);
-    } catch (emailError) {
-      console.error('Email sending failed:', emailError.message);
-    }
-
-    res.status(201).json({ message: 'Message sent successfully' });
+    res.status(201).json({ message: 'Message saved successfully' });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Server error' });
@@ -76,31 +41,6 @@ router.post('/subscribe', async (req, res) => {
 
     const newSubscriber = new Subscriber({ email });
     await newSubscriber.save();
-
-    // Send email alert for new subscriber
-    try {
-      const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: process.env.SMTP_PORT,
-        secure: false,
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS,
-        },
-      });
-
-      const mailOptions = {
-        from: `"${process.env.SMTP_USER}"`,
-        to: process.env.RECEIVER_EMAIL,
-        subject: `New Newsletter Subscriber!`,
-        text: `You have a new subscriber: ${email}`,
-        html: `<p>You have a new newsletter subscriber!</p><p><strong>Email:</strong> ${email}</p>`,
-      };
-
-      await transporter.sendMail(mailOptions);
-    } catch (emailError) {
-      console.error('Newsletter email alert failed:', emailError.message);
-    }
 
     res.status(201).json({ message: 'Subscribed successfully' });
   } catch (error) {
