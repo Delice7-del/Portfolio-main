@@ -31,7 +31,7 @@ if (!mongoUri) {
   process.exit(1);
 }
 
-mongoose.connect(mongoUri)
+mongoose.connect(mongoUri, { serverSelectionTimeoutMS: 5000 })
   .then(() => console.log('✅  MongoDB Connected'))
   .catch(err => {
     console.error('❌  MongoDB Connection Error:', err.message);
