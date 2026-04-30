@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { LuCalendar, LuArrowRight, LuBookOpen } from 'react-icons/lu';
 import { Button } from '@/components/ui/button';
@@ -80,7 +80,7 @@ const BlogSection = () => {
     if (!email) return;
     setIsSubscribing(true);
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/subscribe`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/subscribe`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),

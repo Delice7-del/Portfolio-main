@@ -6,17 +6,9 @@ import {
 } from 'react-icons/lu';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import emailjs from '@emailjs/browser';
 
 const MAX_MESSAGE = 500;
 
-/* ─────────────────────────────────────────────────────────────────
-   Field wrapper — defined OUTSIDE the parent component so React
-   never recreates its identity on re-render. Losing identity causes
-   the input to unmount/remount and drop focus on every keystroke.
-   The amber underline uses a pure CSS transition (no Framer Motion
-   state) so it doesn't trigger any re-renders.
-───────────────────────────────────────────────────────────────── */
 interface FieldProps {
   id: string;
   label: string;
@@ -39,9 +31,7 @@ const Field = ({ id, label, chars, children }: FieldProps) => (
         {chars.current}/{chars.max}
       </span>
     )}
-    {/* Static track */}
     <div className="absolute bottom-0 left-0 h-[1px] w-full bg-white/8" />
-    {/* Animated amber line — pure CSS, no JS state */}
     <div
       className="absolute bottom-0 left-0 h-[1px] bg-primary w-0
                  group-focus-within/field:w-full transition-all duration-300 ease-out"
@@ -49,15 +39,11 @@ const Field = ({ id, label, chars, children }: FieldProps) => (
   </div>
 );
 
-/* ─── Shared input / textarea styling ─── */
 const inputCls =
   'bg-transparent border-0 border-b border-white/8 rounded-none px-0 ' +
   'focus-visible:ring-0 focus-visible:ring-offset-0 text-foreground ' +
   'placeholder:text-muted-foreground/40 w-full outline-none';
 
-/* ─────────────────────────────────────────────────────────────────
-   Contact Section
-───────────────────────────────────────────────────────────────── */
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -80,11 +66,9 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/contact`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
@@ -135,12 +119,10 @@ const ContactSection = () => {
       id="contact"
       className="py-24 bg-surface border-t border-white/5 relative overflow-hidden"
     >
-      {/* Ambient glow */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/3 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
 
-        {/* ── Header ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -162,7 +144,6 @@ const ContactSection = () => {
 
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
 
-          {/* ── Left: Form ── */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -170,7 +151,6 @@ const ContactSection = () => {
             transition={{ duration: 0.6 }}
             className="bg-background border border-white/8 p-8 relative"
           >
-            {/* corner accents */}
             <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-primary pointer-events-none" />
             <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-primary/40 pointer-events-none" />
 
@@ -259,7 +239,6 @@ const ContactSection = () => {
             </form>
           </motion.div>
 
-          {/* ── Right: Info ── */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -267,7 +246,6 @@ const ContactSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="flex flex-col gap-6"
           >
-            {/* Contact details */}
             <div className="bg-background border border-white/8 p-8">
               <h3 className="text-sm font-mono text-muted-foreground uppercase tracking-widest mb-6">
                 Reach Me Directly
@@ -292,7 +270,6 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Social links */}
             <div className="bg-background border border-white/8 p-8">
               <h3 className="text-sm font-mono text-muted-foreground uppercase tracking-widest mb-6">
                 Find Me Online
@@ -313,7 +290,6 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Availability */}
             <div className="bg-background border border-white/8 p-8 relative overflow-hidden">
               <div
                 className="absolute inset-0 opacity-[0.03]"
