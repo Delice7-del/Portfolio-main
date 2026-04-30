@@ -105,7 +105,7 @@ const AboutSection = () => {
                   {skills.map((skill) => (
                     <span
                       key={skill.id}
-                      className="px-5 py-2.5 bg-surface-elevated border border-border shadow-sm rounded-lg text-sm font-mono font-medium text-muted-foreground hover:text-primary hover:border-primary/40 hover:shadow-md transition-all cursor-default"
+                      className="px-5 py-2.5 bg-surface-elevated border border-border shadow-sm rounded-none text-sm font-mono font-medium text-muted-foreground hover:text-primary hover:border-primary/40 hover:shadow-md transition-all cursor-default"
                     >
                       {skill.name}
                     </span>
@@ -126,14 +126,14 @@ const AboutSection = () => {
                       viewport={{ once: true, margin: "-50px" }}
                       transition={{ delay: index * 0.15, duration: 0.6 }}
                       key={item.id}
-                      className={`relative overflow-hidden bg-surface-elevated border border-border shadow-md p-6 lg:p-8 rounded-2xl group hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 ${
+                      className={`relative overflow-hidden bg-surface-elevated border border-border shadow-md p-6 lg:p-8 rounded-none group hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 ${
                         index % 2 === 1 ? 'md:translate-y-12' : ''
                       }`}
                     >
                       {/* Decorative Background Accent */}
                       <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors" />
                       
-                      <div className="w-12 h-12 bg-background border border-border shadow-sm rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-12 h-12 bg-background border border-border shadow-sm rounded-none flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <Icon className="h-6 w-6 text-primary" />
                       </div>
                       <h3 className="font-bold text-xl text-foreground mb-3">{item.title}</h3>
@@ -153,7 +153,7 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
             className="mt-24 md:mt-32"
           >
-            <div className="bg-surface/50 backdrop-blur-xl border border-border rounded-2xl p-6 md:p-8 shadow-xl relative overflow-hidden">
+            <div className="bg-surface/50 backdrop-blur-xl border border-border rounded-none p-6 md:p-8 shadow-xl relative overflow-hidden">
                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/80 to-transparent" />
                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-border">
                 {[

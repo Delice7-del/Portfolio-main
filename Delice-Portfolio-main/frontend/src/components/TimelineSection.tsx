@@ -59,8 +59,8 @@ const TimelineSection = () => {
                             >
                                 {/* Content Side */}
                                 <div className="w-full pl-16 md:pl-0 md:w-[45%]">
-                                    <div className="floating-card p-8 rounded-2xl border border-white/5 bg-surface-elevated/50 backdrop-blur-sm hover:-translate-y-2 hover:border-primary/50 hover:shadow-[0_10px_40px_-15px_rgba(var(--primary),0.3)] transition-all duration-300 group">
-                                        <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary/10 border border-primary/20">
+                                    <div className="floating-card p-8 rounded-none border border-white/5 bg-surface-elevated/50 backdrop-blur-sm hover:-translate-y-2 hover:border-primary/50 hover:shadow-[0_10px_40px_-15px_rgba(var(--primary),0.3)] transition-all duration-300 group">
+                                        <div className="inline-block px-4 py-1.5 mb-6 rounded-none bg-primary/10 border border-primary/20">
                                             <span className="text-primary font-mono text-sm font-semibold">{exp.year}</span>
                                         </div>
                                         
@@ -74,7 +74,7 @@ const TimelineSection = () => {
                                 </div>
 
                                 {/* Center Icon */}
-                                <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-background border-[2px] border-primary text-primary shadow-[0_0_25px_rgba(var(--primary),0.4)] z-10 transition-transform duration-300 hover:scale-110">
+                                <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-none bg-background border-[2px] border-primary text-primary shadow-[0_0_25px_rgba(var(--primary),0.4)] z-10 transition-transform duration-300 hover:scale-110">
                                     <exp.icon className="w-5 h-5" />
                                 </div>
 
